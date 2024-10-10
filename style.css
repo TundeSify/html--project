@@ -1,0 +1,27 @@
+body {
+    background-color: #4a4e69;
+    text-align: center;
+}
+h1 {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+}
+div {
+    display: inline-block;
+}
+img {
+    width: 200px;
+    height: 200px;
+    border: solid black 10px;
+    margin: 10px;
+}
+p {
+    text-align: center;
+    color: white;
+}
+h2 {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+}
