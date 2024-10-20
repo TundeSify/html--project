@@ -32,7 +32,17 @@
         .Logo {
             position: relative;
             text-align: center;
-            z-index: 5;
+            border: solid black 5px;
+            width: 200px;
+            height: 200px;  
+        }
+        .Logo:hover {
+            position: relative;
+            text-align: center;
+            border: solid white 5px;
+            width: 200px;
+            height: 200px; 
+            content: url(Image/invert.jpg); 
         }
         a {
             text-align: center;
@@ -49,6 +59,38 @@
         }
         div {
             display: inline-block;
+        }
+        .img1 {
+            width: 230px;
+            height: 230px;
+            background-color: white;
+            border: solid black 10px;
+            margin-top: 50px;
+        }
+        .img1:hover {
+            width: 230px;
+            height: 230px;
+            background-color: black;
+            border: solid white 10px;
+            margin-top: 50px;
+        }
+        .img2 {
+            width: 350px;
+            height: 350px;
+            background-color: white;
+            border: solid black;
+            border-width: 15px;
+            border-radius: 200px;
+            margin: 10px;
+        }
+        .img2:hover {
+            width: 350px;
+            height: 350px;
+            background-color: black;
+            border: solid white;
+            border-width: 15px;
+            border-radius: 200px;
+            margin: 10px;
         }
         img {
             width: 200px;
@@ -139,6 +181,10 @@
   <br>
   <br>
   <hr>
+  <div class="img2">
+      <div class="img1"><img src="Image/Logo.jpg" alt="Logo" class="Logo"></div>
+  </div>
+  <br>
   <div class="bordercol">
       <h1><button onclick="document.location='Studios.html'" class="button1"> >STUDIOS< </button></h1>
   </div>
