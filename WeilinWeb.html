@@ -8,28 +8,43 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        body {
+        background: linear-gradient(45deg, #0d1b2a, #1b263b, #415a77, #778da9);
+        background-size: 400% 400%;
+        animation: bgTransition 10s ease-in-out infinite;
+        margin: 0;
+        text-align: center;
+        font-family: "Agdasima", sans-serif;
+        color: white;
+      }
+
+      /* Keyframe animation for smooth grey background transition */
+      @keyframes bgTransition {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
         .position {
         border: solid white;
         padding: 10px;
-        position: fixed;
+        position: sticky;
         width: 98.3%;
-        margin-left: -50%;
         top: 0;
         z-index: 1;
-        background-color: #343a40; 
+        background-color: black; 
         }
         .bordercol {
             border: solid white;
-            background-color: #343a40;
+            background-color: black;
             padding: 10px 100px;
         }
         div {
             display: inline-block;
         }
         .P {
-            font-family: "Permanent Marker", system-ui;
+            font-family: "Agdasima", sans-serif;
             text-align: center;
             color: white;
         }
@@ -42,12 +57,12 @@
             height: 200px;
         }
         .bullets {
-            font-family: "Permanent Marker", system-ui;
+            font-family: "Agdasima", sans-serif;
             border: solid white 5px;
             text-align: left;
             padding: 10px;
             color: white;
-            background-color: #343a40;
+            background-color: black;
         }
     </style>
 </head>
@@ -57,11 +72,6 @@
         <h1>Weilin Zhang</h1>
     </div>
     <hr>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <div>
         <img src="Image/WeilinX.jpeg" alt="x">
     </div>
@@ -193,9 +203,6 @@
 <div>
     <h5>
         © 2024 <a href="index.html">Hall of Animations</a> . All rights reserved. <a href="index.html">Contact Us.</a>
-      </h5>
-      <h5>
-          <a href="Donate.html">Donate</a>
       </h5>
 </div>
 </body>

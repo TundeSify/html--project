@@ -3,134 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hall of Animations</title>
+    <title>Hall of Animators</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
-        .position {
+      /* Subtle greyish gradient background animation */
+      body {
+        background: linear-gradient(45deg, #0d1b2a, #1b263b, #415a77, #778da9);
+        background-size: 400% 400%;
+        animation: bgTransition 10s ease-in-out infinite;
+        margin: 0;
+        text-align: center;
+        font-family: "Agdasima", sans-serif;
+        color: white;
+      }
+
+      /* Keyframe animation for smooth grey background transition */
+      @keyframes bgTransition {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      .position {
         border: solid white;
         padding: 10px;
-        position: fixed;
-        width: 98.3%;
-        margin-left: -50%;
+        position: sticky;
         top: 0;
+        width: 98.3%;
         z-index: 1;
-        background-color: #343a40; 
-        }
-        .bordercol {
-            border: solid white;
-            background-color: #343a40;
-            padding: 10px 100px;
-        }
-        body {
-            background-color: #4a4e69 !important;
-            text-align: center;
-        }
-        .Logo {
-            position: relative;
-            text-align: center;
-            border: solid black 5px;
-            width: 200px;
-            height: 200px;  
-        }
-        .Logo:hover {
-            position: relative;
-            text-align: center;
-            border: solid white 5px;
-            width: 200px;
-            height: 200px; 
-            content: url(Image/invert.jpg); 
-        }
-        a {
-            text-align: center;
-            color: white;
-        }
-        h1 {
-            text-align: center;
-            color: white;
-            text-transform: uppercase;
-        }
-        h5 {
-            color: white;
-            text-align: center;
-        }
-        div {
-            display: inline-block;
-        }
-        .img1 {
-            width: 230px;
-            height: 230px;
-            background-color: white;
-            border: solid black 10px;
-            margin-top: 50px;
-        }
-        .img1:hover {
-            width: 230px;
-            height: 230px;
-            background-color: black;
-            border: solid white 10px;
-            margin-top: 50px;
-        }
-        .img2 {
-            width: 350px;
-            height: 350px;
-            background-color: white;
-            border: solid black;
-            border-width: 15px;
-            border-radius: 200px;
-            margin: 10px;
-        }
-        .img2:hover {
-            width: 350px;
-            height: 350px;
-            background-color: black;
-            border: solid white;
-            border-width: 15px;
-            border-radius: 200px;
-            margin: 10px;
-        }
-        img {
-            width: 200px;
-            height: 200px;
-            border: solid black 10px;
-            border-radius: 120px;
-            margin: 10px;
-        }
-        .Links {
-            color: white;
-            text-align: center;
-        }
-        button {
-            font-family: "Permanent Marker", system-ui;
-            color: white;
-            background-color: #343a40;
-            text-align: center;
-            padding: 10px;
-            border-radius: 10px;
-            border: solid white 5px;
-        }
-        .button1 {
-            font-family: "Permanent Marker", system-ui;
-            color: white;
-            background-color: #343a40;
-            text-align: center;
-            padding: 20px 50px;
-            border-radius: 10px;
-            border: solid white 5px;
-        }
-        .button2:hover {
-            font-family: "Permanent Marker", system-ui;
-            color: rgb(178, 178, 255);
-            background-color: #343a40;
-            text-align: center;
-            padding: 10px;
-            border-radius: 10px;
-            border: solid white 5px;
-        }
-        .A:hover {
+        background-color: black;
+      }
+
+      .bordercol {
+        border: solid white;
+        background-color: black;
+        padding: 10px 100px;
+      }
+
+      .Logo {
+        border: solid black 5px;
+        width: 200px;
+        height: 200px;
+      }
+
+      .Logo:hover {
+        border: solid white 5px;
+        content: url(Image/invert.jpg);
+      }
+
+      h1, h5, a {
+        color: white;
+        text-transform: uppercase;
+      }
+
+      a {
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      div {
+        display: inline-block;
+      }
+
+      .img1 {
+        margin-top: 50px;
+      }
+
+      .img1 {
+        width: 230px;
+        height: 230px;
+        background-color: white;
+        border: solid black 10px;
+      }
+
+      .img1:hover {
+        background-color: black;
+        border-color: white;
+      }
+
+      .img2 {
+        width: 350px;
+        height: 350px;
+        background-color: white;
+        border: 15px solid black;
+        border-radius: 200px;
+      }
+
+      .img2:hover {
+        background-color: black;
+        border-color: white;
+      }
+
+      img {
+        width: 200px;
+        height: 200px;
+        border: solid white 10px;
+        border-radius: 120px;
+      }
+
+      button {
+        font-family: "Agdasima", sans-serif;
+        background-color: black;
+        color: white;
+        padding: 5px;
+        border: 5px solid white;
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .button2 {
+        padding: 10px 50px;
+      }
+
+      /* Arrow animation on button hover */
+      .button2:hover::after {
+        content: " >>";
+        color: rgb(178, 178, 255);
+      }
+
+      .button2:hover {
+        color: rgb(178, 178, 255);
+      }
+      .A:hover {
             content: url(Image/Vincent.jpeg);
         }
         .B:hover {
@@ -148,111 +146,62 @@
         .F:hover {
             content: url(Image/unknown.jpg);
         }
-        .G:hover {
-            content: url(Image/unknown.jpg);
-        }
-        .H:hover {
-            content: url(Image/unknown.jpg);
-        }
-        .I:hover {
-            content: url(Image/unknown.jpg);
-        }
-        .J:hover {
-            content: url(Image/unknown.jpg);
-        }
     </style>
-</head>
-<body>
-  <hr>
-  <br>
-  <div class="position">    
-      <h1>
-         | hall of animations |
-      </h1>
+  </head>
+
+  <body>
+    <hr>
+    <div class="position">    
+      <h1>| Hall of Animators |</h1>
       <hr>
       <div class="Links">
-          <a href="index.html">Home</a> | <a href="Updates.html">Updates</a> | <a href="About.html">About</a>
+        <a href="index.html">Home</a> | <a href="">Socials</a> | <a href="About.html">About</a>
       </div>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <hr>
-  <div class="img2">
-      <div class="img1"><img src="Image/Logo.jpg" alt="Logo" class="Logo"></div>
-  </div>
-  <br>
-  <div class="bordercol">
-      <h1><button onclick="document.location='Studios.html'" class="button1"> >STUDIOS< </button></h1>
-  </div>
-  <hr>
-  <div class="bordercol">
-      <h1>| Anime |</h1>
-        <img src="Image/crunchyroll.png" alt="crunchyroll" draggable="false">
-            <h1><button onclick="document.location='https://www.crunchyroll.com'" class="button1"> >CRUNCHYROLL< </button></h1>
-            <!-- HELOOOOO -->
-  </div>
-  <hr>
-  <br>
-  <div class="bordercol">
-      <h1>
-        | Animators |
-      </h1>
-          <div>
-              <img src="Image/vincentX.jpg" alt="A" class="A"><br>
-                  <button onclick="document.location='VincentWeb.html'" class="button2"> >Vincent Chansard< </button>
-          </div>
-          <div>
-              <img src="Image/YenBmX.jpg" alt="B" class="B"><br>
-                  <button onclick="document.location='ChrisWeb.html'" class="button2"> >Chris_bm< </button>
-          </div>
-          <div>
-              <img src="Image/YutakaX.jpg" alt="C" class="C"><br>
-                  <button onclick="document.location='YutakaWeb.html'" class="button2"> >Yutaka Nakamura< </button>
-          </div>
-          <div>
-              <img src="Image/MoriX.jpeg" alt="D" class="D"><br>
-                  <button onclick="document.location='MasamiWeb.html'" class="button2"> >Masami Mori< </button>
-          </div>
-          <div>
-              <img src="Image/AkihiroX.png" alt="E" class="E"><br>
-                  <button onclick="document.location='AkihiroWeb.html'" class="button2"> >Akihiro Ota< </button>
-          </div>
-          <br>
-          <div>
-              <img src="Image/WeilinX.jpeg" alt="F" class="F"><br>
-                  <button onclick="document.location='WeilinWeb.html'" class="button2"> >Weiling Zhang< </button>
-          </div>
-          <div>
-              <img src="Image/unknown.jpg" alt="G" class="G"><br>
-                  <button onclick="document.location='VincentWeb.html'" class="button2"> >None< </button>
-          </div>
-          <div>
-              <img src="Image/unknown.jpg" alt="H" class="H"><br>
-                  <button onclick="document.location='VincentWeb.html'" class="button2"> >None< </button>
-          </div>
-          <div>
-            <img src="Image/unknown.jpg" alt="I" class="I"><br>
-                  <button onclick="document.location='VincentWeb.html'" class="button2"> >None< </button>
-        </div>
-        <div>
-            <img src="Image/unknown.jpg" alt="J" class="J"><br>
-                  <button onclick="document.location='VincentWeb.html'" class="button2"> >None< </button>
-        </div>
-          <br>
-          <h1>To be Continued</h1>
-  </div>
-      <hr>
+    </div>
+    <hr>
+    <div class="img2">
+      <div class="img1">
+        <img src="Image/Logo.jpg" alt="Logo" class="Logo">
+      </div>
+    </div>
+    <hr>
+    <br>
+    <div class="bordercol">
+      <h1>| Animators |</h1>
       <div>
-          <h5>
-              © 2024 <a href="index.html">Hall of Animations</a> . All rights reserved. <a href="index.html">Contact Us.</a>
-            </h5>
-            <h5>
-                <a href="Donate.html">Donate</a>
-            </h5>
+        <img src="Image/vincentX.jpg" alt="A" class="A"><br>
+        <button onclick="document.location='VincentWeb.html'" class="button2">Vincent Chansard</button>
       </div>
-</body>
+      <div>
+        <img src="Image/YenBmX.jpg" alt="B" class="B"><br>
+        <button onclick="document.location='ChrisWeb.html'" class="button2">Chris_bm</button>
+      </div>
+      <div>
+        <img src="Image/YutakaX.jpg" alt="C" class="C"><br>
+        <button onclick="document.location='YutakaWeb.html'" class="button2">Yutaka Nakamura</button>
+      </div>
+      <br>
+      <br>
+      <div>
+        <img src="Image/MoriX.jpeg" alt="D" class="D"><br>
+        <button onclick="document.location='MasamiWeb.html'" class="button2">Masami Mori</button>
+      </div>
+      <div>
+        <img src="Image/AkihiroX.png" alt="E" class="E"><br>
+        <button onclick="document.location='AkihiroWeb.html'" class="button2">Akihiro Ota</button>
+      </div>
+      <div>
+        <img src="Image/WeilinX.jpeg" alt="F" class="F">
+        <br>
+        <button onclick="document.location='WeilinWeb.html'" class="button2">Weiling Zhang</button>
+      </div>
+      <br>
+      <h1>To be Continued</h1>
+    </div>
+
+    <hr>
+    <div>
+      <h5>© 2024 <a href="index.html">Hall of Animators.  |</a> All rights reserved. <a href="index.html">|  Contact Us.</a></h5>
+    </div>
+  </body>
 </html>
