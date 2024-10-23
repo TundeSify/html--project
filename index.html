@@ -37,7 +37,18 @@
         z-index: 1;
         background-color: black;
       }
+      @keyframes slideInLeft {
+      from {
+        transform: translateX(-1000px);
+        }
 
+      to {
+        transform: translateX(1000px);
+        }
+      }
+      .heading-1 {
+        animation: slideInLeft 7s ease-in infinite;
+      }
       .bordercol {
         border: solid white;
         background-color: black;
@@ -156,18 +167,22 @@
   <body>
     <hr>
     <div class="position">    
-      <h1>| Hall of Animators |</h1>
+        <h1>| Hall of Animators |</h1>
       <hr>
       <div class="Links">
         <a href="index.html">Home</a> | <a href="Socials.html">Socials</a>
       </div>
     </div>
     <hr>
-    <div class="img2">
-      <div class="img1">
-        <img src="Image/Logo.jpg" alt="Logo" class="Logo">
+    <selection>
+      <div class="heading-1">
+        <div class="img2">
+          <div class="img1">
+            <img src="Image/Logo.jpg" alt="Logo" class="Logo">
+          </div>
+        </div>
       </div>
-    </div>
+    </selection>
     <hr>
     <br>
     <div class="bordercol">
@@ -203,7 +218,7 @@
     <br>
     <hr>
     <div>
-      <h5>© 2024 <a href="index.html">Hall of Animators.  |</a> All rights reserved. <a href="index.html">|  Contact Us.</a></h5>
+      <h5>© 2024 <a href="index.html">Hall of Animators.  |</a> All rights reserved. <a href="Socials.html">|  Contact Us.</a></h5>
     </div>
   </body>
 </html>
