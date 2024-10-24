@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background: linear-gradient(45deg, #0d1b2a, #1b263b, #415a77, #778da9);
+        background-size: 400% 400%;
+        animation: bgTransition 10s ease-in-out infinite;
+        margin: 0;
+        text-align: center;
+        font-family: "Agdasima", sans-serif;
+        color: white;
+        padding: 0;
+        overflow-x: hidden;
+        align-items: center;
+      }
+      @keyframes bgTransition {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .position {
+        border: solid white;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        width: 98.3%;
+        z-index: 1;
+        background-color: black;
+      }
+      h1 {
+        margin-top: 20px;
+        font-size: 3rem;
+        letter-spacing: 5px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        padding: 50px 0;
+      }
+      .box {
+        width: 80%;
+        max-width: 600px;
+        background-color: black;
+        border-radius: 10px;
+        padding: 20px;
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeInUp 1s ease-out forwards;
+        margin: auto;
+      }
+      /* Apply a staggered animation delay for each box */
+      .box:nth-child(1) {
+        animation-delay: 0.3s;
+      }
+      .box:nth-child(2) {
+        animation-delay: 0.6s;
+      }
+      .box:nth-child(3) {
+        animation-delay: 0.9s;
+      }
+      .box:nth-child(4) {
+        animation-delay: 1.2s;
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .box h2 {
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      .box p {
+        margin: 10px 0 0;
+        font-size: 1.2rem;
+        line-height: 1.6;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      button {
+        font-family: "Agdasima", sans-serif;
+        background-color: black;
+        color: white;
+        padding: 5px;
+        border: solid white 1px;
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .button2 {
+        padding: 10px 50px;
+      }
+
+      /* Arrow animation on button hover */
+      .button2:hover::after {
+        content: " >>";
+        transition: all ease-in-out 0.5s;
+        color: rgb(178, 178, 255);
+      }
+
+      .button2:hover {
+        color: rgb(178, 178, 255);
+      }
+      @keyframes slideInLeft {
+      from {
+        transform: translateX(-300px);
+        }
+
+      to {
+        transform: translateX(0);
+        }
+      }
+      .heading-1 {
+        animation: slideInLeft 3s ease-in;
+      }
+      @keyframes slideInRight {
+      from {
+        transform: translateX(500px);
+        }
+
+      to {
+        transform: translateX(0px);
+        }
+      }
+      .heading-2 {
+        animation: slideInRight 3s ease-in;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      .bordercol {
+        border: solid white;
+        background-color: black;
+        padding: 10px 100px;
+      }
+      .bordercol-1 {
+        border: solid white;
+        background-color: black;
+        padding: 30px;
+        width: 300px;
+        height: 200px;
+        display: inline-block;
+      }
+      .bordercol-2 {
+        border: solid white;
+        background-color: black;
+        padding: 30px;
+        width: 300px;
+        height: 400px;
+        display: inline-block;
+      }
+      p {
+        color: white;
+      }
+      .bullets {
+            font-family: "Agdasima", sans-serif;
+            border: solid white 5px;
+            text-align: left;
+            padding: 10px;
+            color: white;
+            background-color: black;
+            text-align: center;
+            width: fit-content;
+            margin: auto;
+        }
+      ol {
+        text-align: left;
+      }
+      ul {
+        text-align: left;
+      }
+    </style>
+</head>
+<body>
+    <hr>
+    <div class="position">    
+        <h1>| Hall of Animators |</h1>
+      <hr>
+      <div class="Links">
+        <a href="index.html">Home</a> | <a href="Socials.html">Socials</a>
+      </div>
+    </div>
+    <hr>
+    <div class="bordercol">
+        <h1>What is Animation?</h1>
+    </div>
+    <br>
+    <div class="heading-2">
+        <div class="bordercol-1">
+            <p>
+                Animation is the process of creating the illusion of motion and change by rapidly displaying a sequence of static images or frames that minimally differ from each other. This form of visual storytelling is widely used across multiple media, including television, film, video games, web content, and more. Animation blends art, science, and technology to give life to characters, objects, and worlds that would otherwise remain still.
+            </p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="heading-1">
+        <div class="bordercol-2">
+            <p>
+                <h3>Historical Background of Animation</h3>
+                The roots of animation go back thousands of years, with ancient artifacts such as cave paintings depicting animals with multiple sets of legs, possibly intended to convey movement. In modern history, animation’s development began with devices such as the phenakistiscope and zoetrope in the 19th century. These early optical devices demonstrated how a series of sequential images could create the illusion of movement when viewed quickly.
+                In 1908, Émile Cohl created the first fully animated film, Fantasmagorie. From then, pioneers like Walt Disney, Max Fleischer, and others revolutionized animation techniques, creating iconic works such as Steamboat Willie (1928), which introduced synchronized sound, and Snow White and the Seven Dwarfs (1937), the first full-length animated feature film.
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="heading-2">
+        <div class="bullets">
+            <h3>Types of Animation</h3>
+            <ol>
+                <li>Traditional Animation (2D Animation)</li>
+                <ul>
+                    <li>
+                        In this form, animators draw every frame by hand. These frames are then photographed or scanned sequentially to create the illusion of movement.
+                    </li>
+                    <li>
+                        Examples: Disney classics like The Lion King (1994) and Beauty and the Beast.
+                    </li>
+                    <li>This technique is also called cel animation because, in earlier times, characters were drawn on transparent sheets (cels) and layered over painted backgrounds.</li>
+                </ul>
+                <li>Computer-Generated Imagery (CGI) or 3D Animation</li>
+                <ul>
+                    <li>
+                        This is the process of creating moving images through 3D modeling software. Unlike 2D animation, characters and objects are built in a three-dimensional space, giving them depth and realistic movement.
+                    </li>
+                    <li>
+                        Examples: Pixar’s Toy Story (1995), which revolutionized animation with the first fully 3D feature film.
+                    </li>
+                    <li>
+                        CGI is widely used in feature films, video games, advertisements, and architectural visualization.
+                    </li>
+                </ul>
+                <li>Stop-Motion Animation</li>
+                <ul>
+                    <li>
+                        Stop-motion involves physically manipulating objects or models between each photographed frame to make them appear as if they are moving. Techniques include claymation, puppet animation, and cutout animation.
+                    </li>
+                    <li>
+                        Examples: Wallace & Gromit and The Nightmare Before Christmas.
+                    </li>
+                </ul>
+                <li>2D Digital Animation</li>
+                <ul>
+                    <li>
+                        This modern form of 2D animation involves drawing and animating digitally using software like Toon Boom or Adobe Animate. It retains the flat, hand-drawn look but is easier to manipulate compared to traditional animation.
+                    </li>
+                    <li>
+                        Examples: The Simpsons and Rick and Morty.
+                    </li>
+                </ul>
+                <li>Motion Graphics</li>
+                <ul>
+                    <li>
+                        Motion graphics refer to the animated movement of graphic elements such as text, logos, and shapes, often used in advertisements, title sequences, and informational videos.
+                    </li>
+                    <li>
+                        Examples: Opening sequences for TV shows or movie intros.
+                    </li>
+                </ul>
+                <li>Anime and Limited Animation</li>
+                <ul>
+                    <li>
+                        Anime, a distinctive style originating from Japan, often uses limited animation techniques to focus more on storytelling and stylized visuals rather than smooth motion.
+                    </li>
+                    <li>
+                        Examples: Naruto, Attack on Titan, and Spirited Away.
+                    </li>
+                </ul>
+            </ol>
+        </div>
+    </div>
+    <br>
+    <div class="heading-1">
+        <div class="bullets">
+            <h3>The Animation Process: Key Stages</h3>
+            <ol>
+                <li>Concept and Storyboarding:</li>
+                <ul>
+                    <li>
+                        Every animation project begins with an idea or concept, which is developed into a script and then visualized in a storyboard—essentially a comic-like blueprint for the animation.
+                    </li>
+                </ul>
+                <li>Character Design and Modeling:</li>
+                <ul>
+                    <li>
+                        Animators create sketches or 3D models of characters and environments based on the storyboard, considering personality traits and visual aesthetics.
+                    </li>
+                </ul>
+                <li>Rigging and Layout:</li>
+                <ul>
+                    <li>
+                        In 3D animation, rigging involves building a skeletal framework for models to facilitate realistic movement. For 2D animation, animators develop animatics to outline the basic flow.
+                    </li>
+                </ul>
+                <li>Animation and Keyframing:</li>
+                <ul>
+                    <li>
+                        Animators bring characters and elements to life by moving them frame by frame (in traditional animation) or setting keyframes and interpolating movement (in digital or 3D animation).
+                    </li>
+                </ul>
+                <li>Rendering:</li>
+                <ul>
+                    <li>
+                        In 3D animation, rendering is the process of generating final images from 3D models. It involves lighting, shading, and texture mapping to achieve realistic visuals.
+                    </li>
+                </ul>
+                <li>Post-Production:</li>
+                <ul>
+                    <li>
+                        This stage involves adding sound effects, music, and visual effects to enhance the animation. Editing ensures smooth transitions, and final adjustments are made to color and timing.
+                    </li>
+                </ul>
+            </ol>
+        </div>
+    </div>
+    <hr>
+    <div>
+      <h5>© 2024 <a href="index.html">Hall of Animators.  |</a> All rights reserved. <a href="Socials.html">|  Contact Us.</a></h5>
+    </div>
+</body>
+</html>
