@@ -1,258 +1,1251 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hall of Animators</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hall of Animators</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="favicon.ico" type="Image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display&display=swap"
+    rel="stylesheet">
+  <style>
+    .titlebar {
+      width: 100%;
+      height: 100%;
+      background-color: #080051c0;
+      padding: 10px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      border-bottom: solid black 3px;
+      flex-wrap: wrap;
+    }
 
-    <style>
-      /* Subtle greyish gradient background animation */
-      body {
-        background: linear-gradient(45deg, #0d1b2a, #1b263b, #415a77, #778da9);
-        background-size: 400% 400%;
-        animation: bgTransition 10s ease-in-out infinite;
-        margin: 0;
-        text-align: center;
-        font-family: "Agdasima", sans-serif;
-        color: white;
+    .logo {
+      align-items: center;
+      width: 200px;
+      height: 200px;
+      height: 55px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .nav-button {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.5rem;
+      background-color: black;
+      border-radius: 0.25rem;
+      border: 0.1rem solid black;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .nav-button img {
+      width: 20px;
+    }
+
+    .nav-button span {
+      font-size: 1.1rem;
+    }
+
+    .nav-button:hover {
+      background-color: #080051c0;
+      border: solid #080051c0;
+    }
+
+    /* Dropdown Menu */
+
+    .menu {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      right: 0;
+      background-color: black;
+      padding: 10px 0;
+      text-align: center;
+      min-width: 100%;
+      transition: 0.5s;
+    }
+
+    .menu a {
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+      transition: 0.5s;
+    }
+
+    .menu a:hover {
+      background-color: darkgray;
+    }
+
+    /* Show dropdown menu when hovering over nav-button */
+    .nav-button:hover .menu {
+      display: block;
+    }
+
+   /* hero-section */
+
+    .hero {
+      width: 100%;
+      height: 500px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #welcome {
+      filter: brightness(40%);
+      background-position: center;
+      background-attachment: fixed;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      position: absolute;
+      flex-wrap: wrap;
+    }
+
+    .hero h1 {
+      flex-wrap: wrap;
+      position: absolute;
+      color: #ffffff;
+      margin-top: 5%;
+      left: 40px;
+      font-size: 70px;
+    }
+
+    .hero h2 {
+      position: absolute;
+      color: whitesmoke;
+      margin-top: 10%;
+      left: 55px;
+    }
+
+    .hero p {
+      position: absolute;
+      color: whitesmoke;
+      margin-top: 13.4%;
+      left: 59px;
+      text-align: justify;
+      margin-right: 50px;
+    }
+
+    .hero h3 {
+      position: absolute;
+      color: whitesmoke;
+      margin-top: 19.5%;
+      left: 59px;
+      text-align: justify;
+      margin-right: 50px;
+    }
+
+    .hero button {
+      padding: 5px;
+      border: solid 2px whitesmoke;
+      border-radius: 5px;
+      background: none;
+      position: absolute;
+      color: whitesmoke;
+      margin-top: 23%;
+      left: 59px;
+      text-align: center;
+      margin-right: 50px;
+      font-size: large;
+      font-weight: 600;
+      width: 10%;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+
+    .hero button:hover {
+      padding: 5px;
+      border: solid 2px white;
+      border-radius: 5px;
+      background: none;
+      background-color: whitesmoke;
+      position: absolute;
+      color: #343a40;
+      margin-top: 23%;
+      left: 59px;
+      text-align: center;
+      margin-right: 50px;
+      font-size: large;
+      cursor: pointer;
+    }
+
+  /* feature */
+
+    .feature {
+      width: 100%;
+      height: 865px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #video-background {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    #video {
+      position: relative;
+      margin-left: 12.5%;
+      margin-top: 35px;
+      display: block;
+      width: 75%;
+      height: 450px;
+      border-radius: 1rem;
+      object-fit: cover;
+    }
+
+    .feature-title {
+      position: absolute;
+      top: 6%;
+      left: 15.9%;
+      color: #ffffff;
+      font-size: 35px;
+      font-weight: 800;
+      font-family: Arial, sans-serif;
+    }
+
+    .Animation-feature {
+      position: absolute;
+      top: 19.5%;
+      left: 15.5%;
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+    }
+
+    .Animation-feature1 {
+      position: absolute;
+      top: 12.5%;
+      left: 15.5%;
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+    }
+
+    #FEAT-ft {
+      position: absolute;
+      top: 34.5%;
+      left: 15.9%;
+      color: whitesmoke;
+      font-size: larger;
+    }
+
+    #FEAT-list {
+      position: absolute;
+      top: 41.9%;
+      left: 15%;
+      color: white;
+      display: flex;
+      font-size: small;
+
+    }
+
+    #FEAT-list li {
+      list-style: none;
+      margin: 0 15px;
+    }
+
+    #FEAT-but {
+      align-items: center;
+      position: absolute;
+      border: white solid 3px;
+      border-radius: 5px;
+      background-color: white;
+      color: black;
+      padding: 2px 5px;
+      font-size: large;
+      text-align: center;
+      width: 9%;
+      top: 46.9%;
+      left: 15.9%;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+
+    #FEAT-but:hover {
+      align-items: center;
+      position: absolute;
+      border: #343a40 solid 3px;
+      border-radius: 5px;
+      background-color: #343a40;
+      color: whitesmoke;
+      padding: 2px 5px;
+      font-size: large;
+      text-align: center;
+      width: 9%;
+      top: 46.9%;
+      left: 15.9%;
+      cursor: pointer;
+    }
+
+    .category {
+      display: inline-flex;
+      justify-content: space-between;
+      margin-top: 2%;
+    }
+
+    .card1 {
+      background-color: #03071e;
+      display: flex;
+      justify-content: space-between;
+      width: 556px;
+      height: 305px;
+      border-radius: 0.7rem;
+      position: relative;
+      margin-left: 16.6%;
+    }
+
+    .card2 {
+      background-color: #03071e;
+      display: flex;
+      justify-content: space-between;
+      width: 556px;
+      height: 305px;
+      border-radius: 0.7rem;
+      position: relative;
+      margin-left: 30px;
+    }
+
+    .ft2,
+    .ft3 {
+      border-radius: 5px;
+      width: 250px;
+      height: 345px;
+      margin: 0 250px;
+    }
+
+    #ft2 {
+      float: left;
+      left: 4%;
+      margin-top: 5%;
+      position: absolute;
+      width: 190px;
+      height: 250px;
+      align-items: center;
+    }
+
+    #ft3 {
+      float: left;
+      left: 4%;
+      margin-top: 5%;
+      position: absolute;
+      width: 190px;
+      height: 250px;
+      align-items: center;
+    }
+
+    #ft2h {
+      position: absolute;
+      color: #ffffff;
+      top: 5.5%;
+      left: 41.5%;
+      font-size: x-large;
+    }
+
+    #ft2p {
+      position: absolute;
+      color: whitesmoke;
+      top: 15.5%;
+      left: 38%;
+      text-align: justify;
+      font-size: 15px;
+      padding: 10px 20px;
+      width: 61%;
+      height: 25px;
+      line-height: 190%;
+      font-family: 'Trebuchet MS';
+    }
+
+    #howl-list {
+      position: absolute;
+      color: whitesmoke;
+      list-style: none;
+      display: inline-flex;
+      top: 66.5%;
+      left: 39.5%;
+      font-family: 'Trebuchet MS';
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    #howl-list li {
+      list-style: none;
+      margin: 0 10px;
+    }
+
+    #howl-but {
+      position: absolute;
+      left: 58.9%;
+      top: 79.5%;
+      border: rgb(255, 255, 255) solid 3px;
+      border-radius: 5px;
+      background-color: rgb(255, 255, 255);
+      color: black;
+      padding: 2px 5px;
+      font-size: medium;
+      text-align: center;
+      width: 17%;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+
+    #howl-but:hover {
+      position: absolute;
+      left: 58.9%;
+      top: 79.5%;
+      border: #343a40 solid 3px;
+      border-radius: 5px;
+      background-color: #343a40;
+      color: whitesmoke;
+      padding: 2px 5px;
+      font-size: medium;
+      text-align: center;
+      width: 17%;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    #ft3h {
+      position: absolute;
+      color: #ffffff;
+      top: 5.5%;
+      left: 41.5%;
+      font-size: x-large;
+    }
+
+    #ft3p {
+      position: absolute;
+      color: whitesmoke;
+      top: 15.5%;
+      left: 38%;
+      text-align: justify;
+      font-size: 14.5px;
+      padding: 10px 20px;
+      width: 61%;
+      height: 25px;
+      line-height: 190%;
+      font-family: 'Trebuchet MS';
+    }
+
+    #spirit-list {
+      position: absolute;
+      color: whitesmoke;
+      list-style: none;
+      display: inline-flex;
+      top: 66.5%;
+      left: 39.5%;
+      font-family: 'Trebuchet MS';
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    #spirit-list li {
+      list-style: none;
+      margin: 0 10px;
+    }
+
+    #spirit-but {
+      position: absolute;
+      left: 58.9%;
+      top: 79.5%;
+      border: rgb(255, 255, 254) solid 3px;
+      border-radius: 5px;
+      background-color: rgb(255, 255, 255);
+      color: black;
+      padding: 2px 5px;
+      font-size: medium;
+      text-align: center;
+      width: 17%;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+
+    #spirit-but:hover {
+      position: absolute;
+      left: 58.9%;
+      top: 79.5%;
+      border: #343a40 solid 3px;
+      border-radius: 5px;
+      background-color: #343a40;
+      color: whitesmoke;
+      padding: 2px 5px;
+      font-size: medium;
+      text-align: center;
+      width: 17%;
+      align-items: center;
+      cursor: pointer;
+    }
+
+/* Animators */
+
+    #animator-section {
+      width: 100%;
+      height: 1090px;
+      position: relative;
+      overflow: hidden;
+      background-color: #03071e;
+    }
+
+    #filmography-title {
+      margin-bottom: 25px;
+      color: goldenrod;
+      font-size: 50px;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .divider {
+      display: inline-flex;
+    }
+
+    .divider2 {
+      margin-top: 30px;
+      display: inline-flex;
+    }
+
+    #cotainer {
+      display: inline-flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .front {
+      margin-left: 48px;
+      position: relative;
+      width: 320px;
+      height: 450px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .front .poster {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .front .poster::before {
+      content: '';
+      position: absolute;
+      bottom: -180px;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, #080051c0 50%, transparent);
+      transition: 0.5s;
+      z-index: 1;
+    }
+
+    .front:hover .poster::before {
+      bottom: 0px;
+    }
+
+    .front .poster img {
+      width: 100%;
+      transition: 0.5s;
+    }
+
+    .front:hover .poster img {
+      transform: translateY(-25px);
+      filter: blur(5px);
+    }
+
+    .front .details {
+      position: absolute;
+      width: 100%;
+      bottom: -500px;
+      left: 0;
+      z-index: 2;
+      padding: 20px;
+      transition: 0.5s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+
+    .front .details h3 {
+      font-size: 0.8em;
+      color: #fff;
+      margin: 0;
+    }
+
+    .front .details .rating {
+      position: relative;
+      padding: 5px 0;
+    }
+
+    .front .details .ratings .fa-star {
+      color: goldenrod;
+      font-size: 1em;
+      margin-top: 5px;
+    }
+
+    .front .details .ratings span {
+      color: whitesmoke;
+    }
+
+    .front .details .info {
+      color: whitesmoke;
+      margin-top: 6px;
+      line-height: 150%;
+      text-align: justify;
+    }
+
+    .filmb button {
+      margin-top: 10px;
+      border: rgb(255, 255, 255) solid 3px;
+      border-radius: 5px;
+      background-color: rgb(255, 255, 255);
+      color: black;
+      transition: 0.5s;
+      margin-right: 1.5%;
+      font-size: medium;
+      width: 30%;
+      text-align: center;
+      cursor: pointer;
+      justify-content: center;
+    }
+
+    .filmb:hover button {
+      margin-top: 10px;
+      border: #343a40 solid 3px;
+      border-radius: 5px;
+      background-color: #343a40;
+      color: whitesmoke;
+    }
+
+    .front:hover .details {
+      bottom: 40px
+    }
+
+    .front .details .flogo {
+      max-width: 180px;
+    }
+
+    .flogo2 {
+      max-width: 160px;
+    }
+
+    .front .details .flogo2 {
+      max-width: 160px;
+      margin-bottom: 4px;
+    }
+
+    #action {
+      width: 100%;
+      height: 450px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .box {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 80px;
+      overflow: hidden;
+    }
+
+    .textbox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .textbox h2 {
+      text-align: center;
+      color: #7d7fe6;
+      font-size: 60px;
+    }
+
+    .textbox p {
+      color: whitesmoke;
+      text-align: center;
+      font-size: 25px;
+    }
+
+    .wrapper .socmed:hover{
+      width: 200px;
+    }
+
+    .wrapper .socmed{
+      display: inline-block;
+      height: 60px;
+      width: 60px;
+      margin: 0px 30px;
+      overflow: hidden;
+      background: #fff;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.5s ease-out;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wrapper .socmed .icon{
+      text-align: center;
+      display: inline-block;
+      height: 60px;
+      width: 60px;
+      border-radius: 50px;
+      box-sizing: border-box;
+      line-height: 60px;
+      transition: all 0.5s ease-out;
+    }
+
+    .wrapper .socmed:nth-child(1):hover .icon{
+      background: #4267b2;
+    }
+
+    .wrapper .socmed:nth-child(2):hover .icon{
+      background: #1da1f2;
+    }
+
+    .wrapper .socmed:nth-child(3):hover .icon{
+      background: #e13062;
+    }
+
+    .wrapper .socmed:nth-child(4):hover .icon{
+      background: #ff0000;
+    }
+
+    .wrapper .socmed .icon i{
+      font-size: 25px;
+      line-height: 60px;
+      transition: all 0.5s ease-out;
+    }
+
+    .wrapper .socmed:hover .icon i{
+      color: #fff;
+    }
+
+    .wrapper .socmed span{
+      font-size: 20px;
+      font-weight: 500;
+      margin-left: 23px; 
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      display: inline-flex; 
+    }
+
+    .wrapper .socmed:nth-child(1):hover span{
+      color: #4267b2;
+    }
+
+    .wrapper .socmed:nth-child(2):hover span{
+      color: #1da1f2;
+    }
+
+    .wrapper .socmed:nth-child(3):hover span{
+      color: #e13062;
+    }
+
+    .wrapper .socmed:nth-child(4):hover span{
+      color: #ff0000;
+    }
+
+    .wrapper .socmed .icon i{
+      font-size: 25px;
+      line-height: 60px;
+      transition: all 0.5s ease-out;
+    }
+
+    .wrapper .socmed:hover .icon i{
+      color: #fff;
+    }
+
+  /* Contacts-section */
+
+    footer{
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding: 50px 100px;
+      background: #202223;
+    }
+
+    footer .container{
+      width: 100%;
+      display: inline-flex;
+      gap: 65px;
+    }
+
+    footer .container .profile h2{
+      position: relative;
+      color: whitesmoke;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    footer .container .profile p{
+      color: whitesmoke;
+      text-align: justify;
+    }
+
+    footer .container .sci{
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(4,50px);
+    }
+
+    footer .container .sci li{
+      list-style: none;
+    }
+
+    footer .container .sci li a{
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      background: #fff;
+      display: grid;
+      align-content: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: 0.5s;
+    }
+
+    footer .container .sci li a i{
+      color: #03071e;
+      font-size: 20px;
+    }
+
+
+    footer .container .sci li a:hover{
+      background: #e13062;
+    }
+
+    footer .container .links{
+      position: relative;
+    }
+
+    footer .container .links h2{
+      color: whitesmoke;
+      margin-bottom: 12px;
+    }
+
+    footer .container .links ul li{
+      list-style: none;
+    }
+
+    footer .container .links ul li a{
+      color: whitesmoke;
+      text-decoration: none;
+      margin-bottom: 15px;
+      display: inline-block;
+      transition: 0.5s;
+    }
+
+    footer .container .links ul li a:hover{
+      color: #e13062;
+    }
+
+    footer .container .contacts h2{
+      color: whitesmoke;
+      margin-bottom: 20px;
+    }
+
+    footer .container .contacts .number{
+      position: relative;
+    }
+
+    footer .container .contacts .number li{
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      margin-bottom: 16px;
+      list-style: none;
+    }
+
+    footer .container .contacts .number li span{
+      color: whitesmoke;
+      font-size: 20px;
+    }
+
+    footer .container .contacts .number li p{
+      color: #ffffff;
+    }
+
+    footer .container .notice{
+      position: relative;
+    }
+
+    footer .container .notice img{
+      width: 35px;
+      margin-top: 0px;
+    }
+    
+    footer .container .notice p{
+      color: whitesmoke;
+      text-align: justify;
+      margin-left: 1px;
+      line-height: 25px;
+    }
+
+    .copyright{
+      width: 100%;
+      background: #202223;
+      padding: 20px 100px 30px;
+      text-align: center;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .copyright a{
+      color: #2117da;
+      font-size: medium;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.5s;
+    }
+
+    .copyright a:hover{
+      color: #000000;
+    }  
+
+    .gradient-background {
+      background: linear-gradient(133deg, #3d348b, #03071e, #415a77, #0077b6);
+      background-size: 240% 240%;
+      animation: gradient-animation 40s ease infinite;
+    }
+
+    @keyframes gradient-animation {
+      0% {
+        background-position: 0% 50%;
       }
 
-      /* Keyframe animation for smooth grey background transition */
-      @keyframes bgTransition {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+      50% {
+        background-position: 100% 50%;
       }
 
-      .position {
-        border: solid white;
-        padding: 10px;
-        position: sticky;
-        top: 0;
-        width: 98.3%;
-        z-index: 1;
-        background-color: black;
+      100% {
+        background-position: 0% 50%;
       }
-      @keyframes slideInLeft {
-      from {
-        transform: translateX(-1000px);
-        }
+    }
 
-      to {
-        transform: translateX(1000px);
-        }
-      }
-      .heading-1 {
-        animation: slideInLeft 7s ease-in infinite;
-      }
-      .bordercol {
-        border: solid white;
-        background-color: black;
-        padding: 10px 100px;
-      }
+    .kanit-medium-italic {
+      text-align: center;
+      font-family: "Kanit", sans-serif;
+      font-weight: 500;
+      font-style: italic;
+    }
 
-      .Logo {
-        border: solid black 5px;
-        width: 225px;
-        height: 225px;
-      }
+    .kanit-medium {
+      font-size: large;
+      text-align: justify;
+      font-family: "Kanit", sans-serif;
+      font-weight: 500;
+      font-style: normal;
+    }
 
-      .Logo:hover {
-        border: solid white 5px;
-        content: url(Image/invert.jpg);
-      }
+    .flogo {
+      width: 200px;
+      height: 175px;
+    }
+  </style>
+</head>
 
-      h1, h5, a {
-        color: white;
-        text-transform: uppercase;
-      }
-
-      a {
-        text-decoration: none;
-        margin: 0 10px;
-      }
-
-      div {
-        display: inline-block;
-      }
-
-      .img1 {
-        margin-top: 50px;
-      }
-
-      .img1 {
-        width: 230px;
-        height: 230px;
-        background-color: white;
-        border: solid black 10px;
-      }
-
-      .img1:hover {
-        background-color: black;
-        border-color: white;
-      }
-
-      .img2 {
-        width: 350px;
-        height: 350px;
-        background-color: white;
-        border: 15px solid black;
-        border-radius: 200px;
-      }
-
-      .img2:hover {
-        background-color: black;
-        border-color: white;
-      }
-
-      img {
-        width: 200px;
-        height: 200px;
-        border: solid white 10px;
-        border-radius: 120px;
-      }
-
-      button {
-        font-family: "Agdasima", sans-serif;
-        background-color: black;
-        color: white;
-        padding: 5px;
-        border: 5px solid white;
-        border-radius: 10px;
-        transition: all 0.3s ease-in-out;
-      }
-
-      .button2 {
-        padding: 10px 50px;
-      }
-
-      /* Arrow animation on button hover */
-      .button2:hover::after {
-        content: " >>";
-        transition: all ease-in-out 0.5s;
-        color: black;
-      }
-
-      .button2:hover {
-        background-color: white;
-        color: black;
-        border: solid black;
-        font-size: larger;
-      }
-        .A {
-          transition: all 0.3s ease-in-out;
-        }
-        .B {
-          transition: all 0.3s ease-in-out;
-        }
-        .C {
-          transition: all 0.3s ease-in-out;
-        }
-        .D {
-          transition: all 0.3s ease-in-out;
-        }
-        .E {
-          transition: all 0.3s ease-in-out;
-        }
-        .F {
-          transition: all 0.3s ease-in-out;
-        }
-        .A:hover {
-            content: url(Image/Vincent.jpeg);
-            width: 215px;
-            height: 215px;
-        }
-        .B:hover {
-            content: url(Image/YenBm.jpg);
-            width: 215px;
-            height: 215px;
-        }
-        .C:hover {
-            content: url(Image/Yutaka.webp);
-            width: 215px;
-            height: 215px;
-        }
-        .D:hover {
-            content: url(Image/unknown.jpg);
-            width: 215px;
-            height: 215px;
-        }
-        .E:hover {
-            content: url(Image/unknown.jpg);
-            width: 215px;
-            height: 215px;
-        }
-        .F:hover {
-            content: url(Image/unknown.jpg);
-            width: 215px;
-            height: 215px;
-        }
-    </style>
-  </head>
-
-  <body>
-    <hr>
-    <div class="position">    
-        <h1>| Hall of Animators |</h1>
-      <hr>
-      <div class="Links">
-        <a href="index.html">Home</a> | <a href="Socials.html">Socials</a>
+<body>
+  <div class="titlebar">
+    <img src="Image/HOA.png" alt="logo" class="logo" draggable="false">
+    <div class="nav-button">
+      <img src="Image/menu.png" alt="Menu-icon">
+      <span>Menu</span>
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="Animation.html">About</a>
+        <a href="#animator-section">Animator</a>
+        <a href="Socials.html">Contacts</a>
       </div>
     </div>
-    <hr>
-    <selection>
-        <div class="heading-1">
-          <div class="img2">
-            <div class="img1">
-              <img src="Image/Logo.jpg" alt="Logo" class="Logo">
+  </div>
+  <div class="hero">
+    <img src="Image/BackgroundIMG1.png" alt="welcome" id="welcome">
+    <h1>WELCOME</h1>
+    <h2 class="kanit-medium-italic">
+      Welcome to the World of Animators and Animation!
+    </h2>
+    <p class="kanit-medium">
+      Discover the magic behind your favorite characters, stories, and worlds! This site is dedicated to aspiring animators, professionals, and animation enthusiasts. Whether you're here to explore the fundamentals of animation, learn new techniques, or get inspired by industry legends, you've come to the right place.
+
+      From 2D to 3D, traditional to digital, animation is a limitless art form, and we're excited to help you dive in, learn, and create! Let's bring imagination to life one frame at a time.
+    </p>
+    <button onclick="document.location='Animation.html'">Learn more</button>
+  </div>
+  <div class="feature">
+    <div id="video-background" class="gradient-background">
+      <video id="video" autoplay loop muted>
+        <source src="Image/vid1.mp4" type="video/mp4">
+      </video>
+      <h2 class="feature-title">Featuring Sequence</h2>
+      <img src="Image/WeilinX.jpeg" alt="logo" class="Animation-feature1">
+      <img src="Image/OPLOGO.png" alt="logo" class="Animation-feature">
+      <p class="kanit-medium" id="FEAT-ft">
+        "The Ridiculous Power! GEAR5 in Full Play"
+      </p>
+      <ul id="FEAT-list" class="kanit-medium">
+        <li>Animated by Weilin Zhang</li>
+        <li>Episode 1072</li>
+      </ul>
+      <button id="FEAT-but" class="kanit-medium" onclick="document.location='https://www.instagram.com/toei_animation/?hl=en'">Check em out!</button>
+      <div class="category">
+        <div class="card1">
+          <div class="ft2">
+            <img src="Image/koby.png" alt="OnePiece" id="ft2">
+            <h3 id="ft2h" class="kanit-medium">One Piece - E1122</h3>
+            <p id="ft2p">
+              Avalo Pizarro, who merged with the Pirate Island, reaches his giant hand to crush the Navy ship with many soldiers and civilians on board. The wounded Garp gives orders to Koby, Helmeppo, and Prince Grus, and delivers a powerful blow to save the ship.
+            </p>
+          </div>
+        </div>
+        <div class="card2">
+          <div class="ft3">
+            <img src="Image/fanletter.png" alt="OnePiece" id="ft3">
+            <h3 id="ft3h" class="kanit-medium">One Piece - Special</h3>
+            <p id="ft3p">
+              Two years after the Paramount War, the Straw Hats are about to reunite on the Sabaody Archipelago. At the same time, a girl who is head over heels for Nami is trying to hand a fan letter to her before the group leaves the island.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- animator section -->
+   <!-- vincent chansard -->
+
+  <div id="animator-section">
+    <h1 id="filmography-title" class="kanit-medium">ANIMATORS</h1>
+    <div class="divider">
+      <div id="container">
+        <div class="front">
+          <div class="poster">
+            <img src="Image/vincentX.jpg" alt="vincent">
+          </div>
+          <div class="details">
+            <img src="Image/Vincent.jpeg" alt="Vincent" class="flogo">
+            <h3 class="kanit-medium">Vincent Chansard</h3>
+            <div class="ratings">
+              <div class="info">
+                <p>
+                  A man who has shocked the animation community multiple times through the use of his talent in making the most unique character acting, visual effects and impact frames.
+                </p>
+              </div>
+              <div class="filmb">
+                <button class="kanit-medium" onclick="document.location='VincentWeb.html'">About</button>
+              </div>
             </div>
           </div>
         </div>
-    </selection>
-    <hr>
-    <div class="bordercol">
-      <h1><a href="Animation.html">|>>Animation<<|</a></h1>
+      </div>
+
+      <!-- Chris_bm -->
+
+      <div id="container">
+        <div class="front">
+          <div class="poster">
+            <img src="Image/YenBmX.jpg" alt="YenBm">
+          </div>
+          <div class="details">
+            <img src="Image/YenBm.jpg" alt="YenBm" class="flogo">
+            <h3 class="kanit-medium">Chris_bm</h3>
+            <div class="ratings">
+              <div class="info">
+                <p>
+                  A man who is known for smooth animation style and known to make the most craziest sequences in animation, he has gained fame through visual effects and character dynamics.
+                </p>
+              </div>
+              <div class="filmb">
+                <button class="kanit-medium" onclick="document.location='ChrisWeb.html'">About</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Yutaka Nakamura -->
+
+      <div id="container">
+        <div class="front">
+          <div class="poster">
+            <img src="Image/YutakaX.jpg" alt="Yutaka">
+          </div>
+          <div class="details">
+            <img src="Image/Yutaka.webp" alt="Yutaka" class="flogo">
+            <h3 class="kanit-medium">Yutaka Nakamura</h3>
+            <div class="ratings">
+              <div class="info">
+                <p>
+                  A man who has animated for decades and has soared the animation community with his incredible talent in animation and has inspired many to be like him he is known for his visual effects, character dynamics, and etc.
+                </p>
+              </div>
+              <div class="filmb">
+                <button class="kanit-medium" onclick="document.location='YutakaWeb.html'">About</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weilin Zhang -->
+
+      <div id="container">
+        <div class="front">
+          <div class="poster">
+            <img src="Image/WeilinX.jpeg" alt="Weilin">
+          </div>
+          <div class="details">
+            <img src="Image/unknown.jpg" alt="Weilin" class="flogo">
+            <h3 class="kanit-medium">Weilin Zhang</h3>
+            <div class="ratings">
+              <div class="info">
+                <p>
+                  A man who has animated freaky animation styles, known for his shadowless smooth animation, viusal effects, and more.
+                </p>
+              </div>
+              <div class="filmb">
+                <button class="kanit-medium" onclick="document.location='spirit.html'">About</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <hr>
-    <br>
-    <div class="bordercol">
-      <h1>| Animators |</h1>
-      <div>
-        <img src="Image/vincentX.jpg" alt="A" class="A"><br>
-        <button onclick="document.location='VincentWeb.html'" class="button2">Vincent Chansard</button>
+
+    <!-- column2 -->
+    <!-- Masami Mori -->
+
+    <div class="divider2">
+      <div id="container">
+        <div class="front">
+          <div class="poster">
+            <img src="Image/MoriX.jpeg" alt="mori">
+          </div>
+          <div class="details">
+            <img src="Image/unknown.jpg" alt="mori" class="flogo">
+            <h3 class="kanit-medium">Masami Mori</h3>
+            <div class="ratings">
+              <div class="info">
+                <p>
+                  A man known for his clean undetailed animation with life known for animating smooth character acting, visual effects, and etc.
+                </p>
+              </div>
+              <div class="filmb">
+                <button class="kanit-medium" onclick="document.location='MasamiWeb.html'">About</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <img src="Image/YenBmX.jpg" alt="B" class="B"><br>
-        <button onclick="document.location='ChrisWeb.html'" class="button2">Chris_bm</button>
+
+      <!-- Akihiro Ota -->
+
+      <div id="container">
+        <div class="front">
+          <div class="poster">
+            <img src="Image/AkihiroX.png" alt="Ota">
+          </div>
+          <div class="details">
+            <img src="Image/unknown.jpg" alt="Ota" class="flogo">
+            <h3 class="kanit-medium">Akihiro Ota</h3>
+            <div class="ratings">
+              <div class="info">
+                <p>
+                  A man who has shocked many in the animation community making people think his animation was made by AI but he is known for his crazy detailed smooth animation, visual effects character acting and more.
+                </p>
+              </div>
+              <div class="filmb">
+                <button class="kanit-medium" onclick="document.location='AkihiroWeb.html'">About</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <img src="Image/YutakaX.jpg" alt="C" class="C"><br>
-        <button onclick="document.location='YutakaWeb.html'" class="button2">Yutaka Nakamura</button>
+  </div>
+  </div>
+
+<!-- contact section -->
+
+<div class="footer">
+  <footer id="contacts">
+    <div class="container">
+      <div class="profile">
+        <h2>Personal Info</h2>
+          <p>
+            I'm Seth Hector Vasquez, a BSIT student passionate about growth in the tech field. Beyond academics, I enjoy reading, singing, and modeling as creative outlets. I'm especially interested in web design and continuously building my skills to create impactful, user-friendly digital experiences. 
+          </p>
+            <ul class="sci">
+              <li><a href="Socials.html"><i class="fa-solid fa-user"></i></a></li>
+              <li><a href="https://www.facebook.com/seth.vasquez.98/"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="https://x.com/Tundesify117001"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="https://www.instagram.com/tunde_seth/?hl=en"><i class="fab fa-instagram"></i></a></li>
+            </ul>
       </div>
-      <br>
-      <br>
-      <div>
-        <img src="Image/MoriX.jpeg" alt="D" class="D"><br>
-        <button onclick="document.location='MasamiWeb.html'" class="button2">Masami Mori</button>
+      <div class="links">
+        <h2>Website</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Animation.html">About</a></li>
+            <li><a href="#animator-section">Animator</a></li>
+            <li><a href="Socials.html">Contacts</a></li>
+          </ul>
       </div>
-      <div>
-        <img src="Image/AkihiroX.png" alt="E" class="E"><br>
-        <button onclick="document.location='AkihiroWeb.html'" class="button2">Akihiro Ota</button>
+      <div class="contacts">
+        <h2>Contacts</h2>
+        <ul class="number">
+          <li>
+            <span><i class="fa-solid fa-phone"></i></span><p>+63 9876 543 2101</p>
+          </li>
+        </ul>
       </div>
-      <div>
-        <img src="Image/WeilinX.jpeg" alt="F" class="F">
-        <br>
-        <button onclick="document.location='WeilinWeb.html'" class="button2">Weiling Zhang</button>
+      <div class="notice">
+        <img src="Image/Logo.jpg">
+          <p>
+            Note: This website is for educational purposes only and is intended to provide information, resources, and activities to support learning and personal growth. All content is designed to enhance knowledge and skills in a safe, respectful environment.
+          </p>
       </div>
     </div>
-    <br>
-    <hr>
-    <div>
-      <h5>© 2024 <a href="index.html">Hall of Animators.  |</a> All rights reserved. <a href="Socials.html">|  Contact Us.</a></h5>
-    </div>
-  </body>
+  </footer>
+</div>
+<div class="copyright">
+  <p>
+    © 2024 <a href="index.html" class="link">Hall Of Animators.</a> All rights reserved. 
+      <a href="Socials.html"class="link">Contact us</a>
+  </p>
+</div>
+
+</body>
 </html>

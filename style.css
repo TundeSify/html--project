@@ -1,70 +1,9 @@
-h1 {
-    font-family: "Agdasima", sans-serif;
-    text-align: center;
-    color: white;
-    text-transform: uppercase;
-}
-div {
-    display: inline-block;
-}
-img {
-    width: 200px;
-    height: 200px;
-    border: solid black 10px;
-    margin: 10px;
-}
-p {
-    font-family: "Agdasima", sans-serif;
-    text-align: center;
-    color: white;
-}
-h2 {
-    font-family: "Agdasima", sans-serif;
-    text-align: center;
-    color: white;
-    text-transform: uppercase;
-}
-h4 {
-    font-family: "Agdasima", sans-serif;
-    text-align: center;
-    color: white;
-    text-transform: uppercase;
-}
-h5 {
-    font-family: "Agdasima", sans-serif;
-    color: white;
-}
-a {
-    font-family: "Agdasima", sans-serif;
-    color: white;
-}
-.agdasima-regular {
-    font-family: "Agdasima", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
   }
-ol {
-    font-family: "Agdasima", sans-serif;
-}
-ul {
-    font-family: "Agdasima", sans-serif;
-}
-.container {
-     margin: 100px 0 0 200px;
-     width: 70%;
-     height: 450px;
-     display: flex;
-     justify-content: center;
-     gap: 10px;
-}
-.container img {
-    width: 10%;
-    height: 80%;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    transition: all ease-in-out 0.5s;
-}
-.container img:hover {
-    width: 25%;
-}
+  body{
+    background-color: gainsboro;
+  }
