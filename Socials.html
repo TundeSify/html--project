@@ -1,170 +1,599 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Socials - Hall of Animators</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet" />
-
-    <style>
-      /* Background animation with gradient */
-      body {
-        background: linear-gradient(45deg, #0d1b2a, #1b263b, #415a77, #778da9);
-        background-size: 400% 400%;
-        margin: 0;
-        text-align: center;
-        font-family: "Agdasima", sans-serif;
-        color: white;
-      }
-
-      body {
-      background: linear-gradient(133deg, #3d348b, #03071e, #415a77, #0077b6);
-      background-size: 240% 240%;
-      animation: gradient-animation 40s ease infinite;
+<!-- check this website out "https://tundesify.github.io/html--project/" -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socials</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display&display=swap"
+    rel="stylesheet">
+  <style>
+    .titlebar {
+      width: 100%;
+      height: 100%;
+      background-color: rgb(8, 8, 8);
+      padding: 10px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0%;
+      left: 0%;
+      right: 0%;
+      z-index: 99;
+      border-bottom: solid black 3px;
+    }
+    .logo {
+      align-items: center;
+      border-radius: 10px;
+      width: 250px;
+      height: 55px;
+    }
+    .nav-button {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.5rem;
+      background-color: black;
+      border-radius: 0.25rem;
+      border: 0.1rem solid black;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+      transition: 0.5s;
     }
 
-    @keyframes gradient-animation {
-      0% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
+    .nav-button img {
+      width: 20px;
     }
 
-      .position {
-        border: solid white;
-        padding: 10px;
-        position: sticky;
-        top: 0;
-        width: 98.3%;
-        z-index: 1;
-        background-color: black;
-      }
+    .nav-button span {
+      font-size: 1.1rem;
+    }
 
-      h1, h5, a {
-        color: white;
-        text-transform: uppercase;
-      }
+    .nav-button:hover {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.5rem;
+      background-color: cadetblue;
+      border-radius: 0.25rem;
+      border: 0.1rem solid cadetblue;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+    }
 
-      a {
-        text-decoration: none;
-        margin: 0 10px;
-        transition: color 0.3s;
-      }
+    /* Dropdown Menu */
 
-      a:hover {
-        color: rgb(178, 178, 255);
-      }
+    .menu {
+      display: none;
+      position: absolute;
+      top: 105%;
+      left: 0;
+      right: 0;
+      background-color: black;
+      padding: 10px 0;
+      text-align: center;
+      min-width: 100%;
+      transition: 0.5s;
+    }
 
-      .social-container {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        margin-top: 50px;
-      }
+    .menu a {
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+      transition: 0.5s;
+    }
+    .menu a:hover {
+      background-color: darkgray;
+    }
 
-      .social-icon {
-        width: 100px;
-        height: 100px;
-        border: 5px solid white;
-        border-radius: 50%;
-        background-color: black;
-        transition: background-color 0.3s, transform 0.3s;
-      }
+    /* Show dropdown menu when hovering over nav-button */
+    .nav-button:hover .menu {
+      display: block;
+    }
 
-      .social-icon:hover {
-        background-color: #778da9;
-        transform: scale(1.1);
-      }
+/* Contacts-section */
 
-      img {
-        width: 80%;
-        height: 80%;
-        margin-top: 10%;
-        border-radius: 50%;
-      }
+    footer {
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding: 50px 100px;
+      background: #000000;
+    }
 
-      footer {
-        margin-top: 40px;
-      }
-      .profile {
-        width: 300px;
-        height: 400px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .P {
-            font-family: "Agdasima", sans-serif;
-            text-align: center;
-            color: white;
-            width: 200px;
-            margin-left: auto;
-            margin-right: auto;
-            border: solid white;
-            background-color: black;
-            padding: 50px 100px;
-        }
-    </style>
-  </head>
+    footer .container {
+      width: 100%;
+      display: inline-flex;
+      gap: 65px;
+    }
 
-  <body>
-    <hr>
-    <div class="position">
-      <h1>| Social Media |</h1>
-      <hr>
-      <div>
-        <a href="index.html">| Home |</a> 
+    footer .container .profile h2 {
+      position: relative;
+      color: whitesmoke;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    footer .container .profile p {
+      color: whitesmoke;
+      text-align: justify;
+    }
+
+    footer .container .sci {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 50px);
+    }
+
+    footer .container .sci li {
+      list-style: none;
+    }
+
+    footer .container .sci li a {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      background: #fff;
+      display: grid;
+      align-content: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: 0.5s;
+    }
+
+    footer .container .sci li a i {
+      color: #03071e;
+      font-size: 20px;
+    }
+
+
+    footer .container .sci li a:hover {
+      background: #e13062;
+    }
+
+    footer .container .links {
+      position: relative;
+    }
+
+    footer .container .links h2 {
+      color: whitesmoke;
+      margin-bottom: 12px;
+    }
+
+    footer .container .links ul li {
+      list-style: none;
+    }
+
+    footer .container .links ul li a {
+      color: whitesmoke;
+      text-decoration: none;
+      margin-bottom: 15px;
+      display: inline-block;
+      transition: 0.5s;
+    }
+
+    footer .container .links ul li a:hover {
+      color: #e13062;
+    }
+
+    footer .container .contacts h2 {
+      color: whitesmoke;
+      margin-bottom: 20px;
+    }
+
+    footer .container .contacts .number {
+      position: relative;
+    }
+
+    footer .container .contacts .number li {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      margin-bottom: 16px;
+      list-style: none;
+    }
+
+    footer .container .contacts .number li span {
+      color: whitesmoke;
+      font-size: 20px;
+    }
+
+    footer .container .contacts .number li p {
+      color: whitesmoke;
+    }
+
+    footer .container .notice {
+      position: relative;
+    }
+
+    footer .container .notice img {
+      width: 35px;
+      margin-top: 0px;
+    }
+
+    footer .container .notice p {
+      color: whitesmoke;
+      text-align: justify;
+      margin-left: 1px;
+      line-height: 25px;
+    }
+
+    .copyright {
+      width: 100%;
+      background: #000000;
+      padding: 20px 100px 30px;
+      text-align: center;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .copyright a {
+      color: #2117da;
+      font-size: medium;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.5s;
+    }
+
+    .copyright a:hover {
+      color: #2117da;
+    }
+
+    /* Font */
+
+    .kanit-medium-italic {
+      text-align: center;
+      font-family: "Kanit", sans-serif;
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    .kanit-medium {
+      font-size: large;
+      text-align: justify;
+      font-family: "Kanit", sans-serif;
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    /* Hero Section */
+
+    .hero {
+      width: 100%;
+      height: 650px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fade {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 650px);
+    }
+
+    #video1 {
+      position: absolute;
+      filter: brightness(120%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    #img2{
+      position: absolute;
+      width: 200px;
+      top: 30%;
+      left: 10%;
+      z-index: 1;
+    }
+
+    .hero li{
+      list-style: none;
+      position: relative; 
+      display: inline-block; 
+      margin-right: 10px; 
+      font-size: larger;
+      font-weight: 600;
+      font-family: 'Trebuchet MS';
+      color: white;
+      margin-top: 24%;
+      left: 10%;
+      z-index: 1;
+    }
+
+    .hero p{
+      z-index: 1;
+      position: absolute;
+      font-size: large;
+      font-weight: 500;
+      font-family: 'Trebuchet MS';
+      color: white;
+      width: 550px;
+      text-align: justify;
+      line-height: 1.8rem;
+      margin-top: 15px;
+      left: 10.2%;
+    }
+
+    .hero button{
+      position: absolute;
+      color: white;
+      background: none;
+      border: #fff solid 3px;
+      border-radius: 0.5rem;
+      font-size: larger;
+      font-weight: 600;
+      font-family: 'Trebuchet MS';
+      padding: 5px;
+      margin-top: 7%;
+      left: 10.1%;
+      z-index: 1;
+      width: 100px;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+
+    .hero button:hover{
+      position: absolute;
+      color: #000000;
+      background: white;
+      border: #fff solid 3px;
+      border-radius: 0.5rem;
+      font-size: larger;
+      font-weight: 600;
+      font-family: 'Trebuchet MS';
+      padding: 5px;
+      margin-top: 7%;
+      left: 10.1%;
+      z-index: 1;
+      width: 100px;
+      cursor: pointer;
+    }
+
+    /*  Me Info */
+
+    .bluefade {
+      width: 100%;
+      height: 350px;
+      position: absolute;
+      z-index: 1;
+      background: linear-gradient(0deg, rgb(3, 7, 30), rgba(3, 7, 30, 0.681), transparent 50%);
+    }
+
+    .container {
+      width: 100%;
+      height: 350px;
+      position: relative;
+    }
+
+    .movie {
+      width: 100%;
+      height: 350px;
+      background-color: black;
+      background-position: right;
+      position: relative;
+    }
+
+    .movie p {
+      position: absolute;
+      text-align: left;
+      color: white;
+      font-size: 30px;
+      width: 650px;
+      margin-top: 129px;
+      left: 10%;
+      z-index: 1;
+    }
+
+    .movie img {
+      width: 450px;
+      position: absolute;
+      right: 10%; 
+      top: 50%; 
+      transform: translateY(-50%);
+      border-radius: 10px;
+      filter: brightness(70%);
+      z-index: 1;
+      transition: 0.5s;
+    }
+
+    .movie img:hover {
+      width: 455px;
+      position: absolute;
+      right: 10%; 
+      top: 50%; 
+      transform: translateY(-50%);
+      border-radius: 10px;
+      filter: brightness(70%);
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .blackfade {
+      position: absolute;
+      width: 100%;
+      height: 750px;
+      z-index: 1;
+      background: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.049), transparent 60%);
+    }
+
+    .synopsis{
+      position: relative;
+      width: 100%;
+      height: 750px;
+      background-color: #03071e;
+    }
+
+    .synopsis h2{
+      text-align: center;
+      font-size: 55px;
+      color: whitesmoke;
+      padding-top: 5px;
+    }
+
+    .synopsis img{
+      filter: brightness(70%);
+      width: 420px;
+      height: 550px;
+      margin-top: 2%;
+      border-radius: 20px;
+      margin-left: 14.9%;
+      transition: 0.5s;
+      position: absolute;
+      z-index: 2;
+    }
+
+    .synopsis img:hover{
+      filter: brightness(70%);
+      width: 425px;
+      height: 550px;
+      margin-top: 2%;
+      border-radius: 20px;
+      margin-left: 14.9%;
+      cursor: pointer;
+      position: absolute;
+      z-index: 2;
+    }
+
+    .synopsis p{
+      text-align: justify;
+      color: #fff;
+      width: 550px;
+      float: right;
+      margin-top: 50px;
+      margin-right: 15%;
+      font-size: 20px;
+      font-family: 'Trebuchet MS';
+      font-weight: 500;
+      line-height: 1.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="titlebar">
+    <img src="Image/HOA.png" alt="logo" class="logo">
+    <div class="nav-button">
+      <img src="Image/menu.png" alt="Menu icon">
+      <span>Menu</span>
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="Animation.html">About</a>
+        <a href="index.html#animator-section">Animator</a>
+        <a href="Socials.html">Contacts</a>
       </div>
-      </div>
-      <h1>| Seth Hector Vasquez |</h1>
-      <div class="profile">
-        <img src="Image/seth.jpg" alt="seth" class="profile">
     </div>
+  </div>
+
+  <!-- Hero Section -->
+
+  <div class="hero">
+    <div class="fade"></div>
+      <video id="video1" autoplay loop muted>
+        <source src="Image/1104.mp4" type="video/mp4">
+      </video>
+      <img src="Image/name2.png" alt="name" id="img2" draggable="false">
+       <ul>
+        <li>Decemeber 01, 2005</li>
+        <li>Philippines, Cebu City</li>
+        <li>WebDeveloper</li>
+       </ul>
+         <p>
+            † Hurt me with the truth, But never comfort me with a lie.
+         </p>
+        <button onclick="document.location='index.html'">Home</button>
+  </div>
+
+  <!-- Me Info -->
+  <div class="bluefade"></div>
+  <div class="container">
+    <div class="movie">
+      <p class="kanit-medium">
+        A young man who aspires freedom 
+      </p>
+        <img src="Image/me.jpg" alt="about-me">
     </div>
-    <hr>
-    <h1>| about me |</h1>
-    <div class="P">
+  </div>
+  <div class="blackfade"></div>
+  <div class="synopsis">
+    <h2>About Me</h2>
+      <img src="Image/seth.jpg" alt="bombaclart">
       <p>
         I am Seth Hector Vasquez, and I love anime, manga, games, and some sports, such as badminton, arnis, darts, and football. I also have a deep passion for coding, and ever since the first year of my BSIT program, I’ve enjoyed my time immensely. One of the highlights has been the web development projects we’ve done. Creating webpages from scratch, experimenting with HTML, and CSS, and self learning about blender, animation, digital art, and so on.
+      <br>
+      <br>
         Web development has given me a sense of creativity and accomplishment, especially when my ideas take shape on a webpage. I enjoy tackling challenges, debugging, and finding innovative solutions to coding problems. Beyond academics, I always look for new ways to grow my skills and explore emerging trends in tech and software development.
       </p>
+  </div>
+
+<!-- Socials section -->
+
+<div class="footer">
+  <footer id="contacts">
+    <div class="container">
+      <div class="profile">
+        <h2>Personal Info</h2>
+          <p>
+            I'm Seth Hector Vasquez, a BSIT student driven about growth in the tech field. Beyond academics, I enjoy reading manga, playing games, and etc. I'm especially interested in web design and animation like blender or art continuously building my skills to create impactful, user-friendly digital experiences. 
+          </p>
+            <ul class="sci">
+                <li><a href="Socials.html"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="https://www.facebook.com/seth.vasquez.98/"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://x.com/Tundesify117001"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/tunde_seth/?hl=en"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+      </div>
+      <div class="links">
+        <h2>Website</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Animation.html">About</a></li>
+            <li><a href="index.html#animator-section">Animator</a></li>
+            <li><a href="Socials.html">Contacts</a></li>
+          </ul>
+      </div>
+      <div class="contacts">
+        <h2>Contacts</h2>
+        <ul class="number">
+          <li>
+            <span><i class="fa-solid fa-phone"></i></span><p>+63 9876 543 2101</p>
+          </li>
+        </ul>
+      </div>
+      <div class="notice">
+        <img src="Image/Logo.jpg">
+          <p>
+            Note: This website is for educational purposes only and is intended to provide information, resources, and activities to support learning and personal growth. All content is designed to enhance knowledge and skills in a safe, respectful environment.
+          </p>
+      </div>
     </div>
-    <hr>
-    <h1>| Socials |</h1>
-    <div class="social-container">
-      <a href="https://x.com/Tundesify117001" target="_blank" class="social-icon">
-        <img src="Image/Twitter.png" alt="Twitter" />
-      </a>
-      <br>
-      <a href="https://www.instagram.com/tunde_seth/?hl=en" target="_blank" class="social-icon">
-        <img src="Image/Instagram.webp" alt="Instagram" />
-      </a>
-      <br>
-      <a href="https://www.facebook.com/seth.vasquez.98/" target="_blank" class="social-icon">
-        <img src="Image/Facebook.png" alt="Facebook" />
-      </a>
-      <br>
-      <a href="https://ph.pinterest.com/tundesify117001/_profile/" target="_blank" class="social-icon">
-        <img src="Image/Pinterest.png" alt="Pinterest" />
-      </a>
-      <br>
-      <a href="https://www.tiktok.com/@tundesify" target="_blank" class="social-icon">
-        <img src="Image/Tiktok.webp" alt="Tiktok" />
-      </a>
-    </div>
-    <br>
-    <hr>
-      <h5>© 2024 <a href="index.html">Hall of Animators</a>. All rights reserved. <a href="index.html">Contact Us</a></h5>
-    <hr>
-  </body>
+  </footer>
+</div>
+<div class="copyright">
+  <p>
+    © 2024 <a href="index.html" class="link">Hall Of Animators.</a> All rights reserved.
+    <a href="Socials.html"class="link">Contact us</a>
+  </p>
+</div>
+</body>
 </html>
