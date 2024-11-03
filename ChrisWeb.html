@@ -1,17 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chris_bm</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-        background: linear-gradient(45deg, #0d1b2a, #1b263b, #415a77, #778da9);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chris</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    .titlebar {
+      width: 100%;
+      height: 100%;
+      background-color: #080051c0;
+      padding: 10px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0%;
+      left: 0%;
+      right: 0%;
+      z-index: 99;
+      border-bottom: solid black 3px;
+    }
+
+    .logo {
+      border-radius: 10px;
+      align-items: center;
+      width: 250px;
+      height: 55px;
+    }
+
+    .nav-button {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.5rem;
+      background-color: black;
+      border-radius: 0.25rem;
+      border: 0.1rem solid black;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .nav-button img {
+      width: 20px;
+    }
+
+    .nav-button span {
+      font-size: 1.1rem;
+    }
+
+    .nav-button:hover {
+      background-color: #080051c0;
+      border: solid #080051c0;
+    }
+
+    /* Dropdown Menu */
+    .menu {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 0px;
+      right: 0px;
+      background-color: black;
+      padding: 10px 0;
+      text-align: center;
+      min-width: 100%;
+      transition: 0.5s;
+    }
+
+    .menu a {
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+      transition: 0.5s;
+    }
+
+    .menu a:hover {
+      background-color: darkgray;
+    }
+
+    /* Show dropdown menu when hovering over nav-button */
+    .nav-button:hover .menu {
+      display: block;
+    }
+
+    /* Contacts-section */
+
+    footer {
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding: 50px 100px;
+      background: #202223;
+    }
+
+    footer .container {
+      width: 100%;
+      display: inline-flex;
+      gap: 65px;
+    }
+
+    footer .container .profile h2 {
+      position: relative;
+      color: whitesmoke;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    footer .container .profile p {
+      color: whitesmoke;
+      text-align: justify;
+    }
+
+    footer .container .sci {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 50px);
+    }
+
+    footer .container .sci li {
+      list-style: none;
+    }
+
+    footer .container .sci li a {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      background: #fff;
+      display: grid;
+      align-content: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: 0.5s;
+    }
+
+    footer .container .sci li a i {
+      color: #03071e;
+      font-size: 20px;
+    }
+
+
+    footer .container .sci li a:hover {
+      background: #e13062;
+    }
+
+    footer .container .links {
+      position: relative;
+    }
+
+    footer .container .links h2 {
+      color: whitesmoke;
+      margin-bottom: 12px;
+    }
+
+    footer .container .links ul li {
+      list-style: none;
+    }
+
+    footer .container .links ul li a {
+      color: whitesmoke;
+      text-decoration: none;
+      margin-bottom: 15px;
+      display: inline-block;
+      transition: 0.5s;
+    }
+
+    footer .container .links ul li a:hover {
+      color: #e13062;
+    }
+
+    footer .container .contacts h2 {
+      color: whitesmoke;
+      margin-bottom: 20px;
+    }
+
+    footer .container .contacts .number {
+      position: relative;
+    }
+
+    footer .container .contacts .number li {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      margin-bottom: 16px;
+      list-style: none;
+    }
+
+    footer .container .contacts .number li span {
+      color: whitesmoke;
+      font-size: 20px;
+    }
+
+    footer .container .contacts .number li p {
+      color: whitesmoke;
+    }
+
+    footer .container .notice {
+      position: relative;
+    }
+
+    footer .container .notice img {
+      width: 35px;
+      margin-top: 0px;
+    }
+
+    footer .container .notice p {
+      color: whitesmoke;
+      text-align: justify;
+      margin-left: 1px;
+      line-height: 25px;
+    }
+
+    .copyright {
+      width: 100%;
+      background: #202223;
+      padding: 20px 100px 30px;
+      text-align: center;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .copyright a {
+      color: #2117da;
+      font-size: medium;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.5s;
+    }
+
+    .copyright a:hover {
+      color: #2117da;
+    }
+
+    /* Profile Section */
+
+    #hero {
+      width: 100%;
+      min-height: 90vh;
+      background-position: right;
+      background-size: cover;
+      padding: 10px 10%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .content {
+      margin-top: 10%;
+      max-width: 600px;
+    }
+
+    .content h1 {
+      font-size: 70px;
+      color: whitesmoke;
+    }
+
+    .content p {
+      line-height: 25px;
+      text-align: justify;
+      margin: 10px 0 30px;
+      color: whitesmoke;
+    }
+
+    .ftimg {
+      width: 500px;
+      height: 630px;
+      position: absolute;
+      bottom: 7%;
+      right: 10%;
+      border-radius: 45px;
+      z-index: 2;
+      transition: 0.5s;
+    }
+
+    .ftimg:hover {
+      width: 505px;
+      height: 635px;
+      position: absolute;
+      bottom: 7%;
+      right: 10%;
+      border-radius: 45px;
+      z-index: 2;
+    }
+
+    .wrapper .socmed:hover {
+      width: 200px;
+    }
+
+    .wrapper .socmed {
+      display: inline-block;
+      height: 50px;
+      width: 50px;
+      margin: 0px 20px;
+      overflow: hidden;
+      background: #000000;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.5s ease-out;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wrapper .socmed .icon {
+      text-align: center;
+      display: inline-block;
+      height: 50px;
+      width: 50px;
+      border-radius: 50px;
+      box-sizing: border-box;
+      line-height: 50px;
+      transition: all 0.5s ease-out;
+    }
+
+    .wrapper .socmed:nth-child(1):hover .icon {
+      background: #f21db2;
+    }
+
+    .wrapper .socmed .icon i {
+      font-size: 25px;
+      line-height: 50px;
+      transition: all 0.5s ease-out;
+    }
+
+    .wrapper .socmed:hover .icon i {
+      color: #fff;
+    }
+
+    .wrapper .socmed span {
+      font-size: 20px;
+      font-weight: 500;
+      margin-left: 23px;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      display: inline-flex;
+    }
+
+    .wrapper .socmed:nth-child(1):hover span {
+      color: #f21db2;
+    }
+
+
+    .wrapper .socmed .icon i {
+      font-size: 25px;
+      line-height: 50px;
+      transition: all 0.5s ease-out;
+    }
+
+    .wrapper .socmed:hover .icon i {
+      color: #fff;
+    }
+
+    .gradient-background {
+      background: linear-gradient(130deg, #000428, #001845, #002f6c, #001845, #000428);
+      background-size: 240% 240%;
+      animation: gradient-animation 20s ease infinite;
+    }
+
+    @keyframes gradient-animation {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .container1 {
+     margin: 100px 0 0 200px;
+     width: 70%;
+     height: 450px;
+     display: flex;
+     justify-content: center;
+     gap: 10px;
+}
+.container1 .resize {
+    width: 10%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    transition: all ease-in-out 0.5s;
+}
+.container1 .resize:hover {
+    width: 25%;
+}
+.container1 .title {
+    margin-left: 10px;
+    translate: 0 100%;
+    opacity: 0;
+}
+.container1 .resize:hover .title {
+    opacity: 1;
+    translate: 0 0;
+}
+.center {
+    text-align: center;
+}
+
+body {
+        background: linear-gradient(130deg, #000321, #000a33, #001140, #000a33, #000321);
         background-size: 400% 400%;
         margin: 0;
         text-align: center;
@@ -20,7 +424,7 @@
       }
 
       body {
-      background: linear-gradient(133deg, #3d348b, #03071e, #415a77, #0077b6);
+      background: linear-gradient(130deg, #000321, #000a33, #001140, #000a33, #000321);
       background-size: 240% 240%;
       animation: gradient-animation 40s ease infinite;
     }
@@ -38,21 +442,30 @@
         background-position: 0% 50%;
       }
     }
-        .position {
-        border: solid white;
-        padding: 10px;
-        position: sticky;
-        width: 98.3%;
-        top: 0;
-        z-index: 1;
-        background-color: black; 
-        }
-        .bordercol {
-            border: solid white;
+
+    .edit {
+        border: solid white 10px;
+        border-radius: 10px;
+        width: 400px;
+        height: 250px;
+        margin: 10px;
+    }
+    .display {
+        display: inline-block;
+    }
+
+    .bullets {
+            width: 750px;
+            font-family: "Agdasima", sans-serif;
+            border: solid white 5px;
+            border-radius: 0 50px;
+            text-align: left;
+            padding: 10px;
+            color: white;
             background-color: black;
-            padding: 10px 100px;
         }
-        div {
+        .contentBruv {
+            justify-content: center;
             display: inline-block;
         }
         .P {
@@ -60,119 +473,56 @@
             text-align: center;
             color: white;
         }
-        .edit {
-            width: 400px;
-            height: 250px;
-        }
-        .resize {
-            width: 150px;
-            height: 200px;
-        }
-        .bullets {
-            font-family: "Agdasima", sans-serif;
-            border: solid white 5px;
-            text-align: left;
-            padding: 10px;
-            color: white;
+        .bordercol {
+            border: solid white;
+            border-radius: 0 50px;
             background-color: black;
+            padding: 10px;
+            display: inline-block;
         }
-        h1 {
-    font-family: "Agdasima", sans-serif;
-    text-align: center;
-    color: white;
-    text-transform: uppercase;
-}
-div {
-    display: inline-block;
-}
-img {
-    width: 200px;
-    height: 200px;
-    border: solid black 10px;
-    margin: 10px;
-}
-p {
-    font-family: "Agdasima", sans-serif;
-    text-align: center;
-    color: white;
-}
-h2 {
-    font-family: "Agdasima", sans-serif;
-    text-align: center;
-    color: white;
-    text-transform: uppercase;
-}
-h4 {
-    font-family: "Agdasima", sans-serif;
-    text-align: center;
-    color: white;
-    text-transform: uppercase;
-}
-h5 {
-    font-family: "Agdasima", sans-serif;
-    color: white;
-}
-a {
-    font-family: "Agdasima", sans-serif;
-    color: white;
-}
-.agdasima-regular {
-    font-family: "Agdasima", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-ol {
-    font-family: "Agdasima", sans-serif;
-}
-ul {
-    font-family: "Agdasima", sans-serif;
-}
-.container {
-     margin: 100px 0 0 200px;
-     width: 70%;
-     height: 450px;
-     display: flex;
-     justify-content: center;
-     gap: 10px;
-}
-.container img {
-    width: 10%;
-    height: 80%;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    transition: all ease-in-out 0.5s;
-}
-.container img:hover {
-    width: 25%;
-}
-.container .title {
-    margin-left: 10px;
-    translate: 0 100%;
-    opacity: 0;
-}
-.container img:hover .title {
-    opacity: 1;
-    translate: 0 0;
-}
-    </style>
+  </style>
 </head>
+
 <body>
-    <hr>
-    <div class="position">
-        <h1>Chris_bm</h1>
+  <div class="titlebar">
+    <img src="Image/HOA.png" alt="logo" class="logo">
+    <div class="nav-button">
+      <img src="Image/menu.png" alt="Menu icon">
+      <span>Menu</span>
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html#animator-section">Animator</a>
+        <a href="Socials.html">Contacts</a>
+      </div>
     </div>
-    <hr>
-    <div>
-        <img src="Image/YenBmX.jpg" alt="x">
+  </div>
+
+  <!-- Profile Section -->
+
+  <div id="hero" class="gradient-background">
+    <div class="content">
+      <h1>Chris<br>Yen_BM</h1>
+      <p>
+        A man who is known for smooth animation style and known to make the most craziest sequences in animation, he has gained fame through visual effects and character dynamics.
+      </p>
+      <div class="wrapper">
+        <div class="socmed" onclick="document.location='https://www.instagram.com/ct_bm/'">
+          <div class="icon"><i class="fab fa-instagram"></i></div>
+          <span>Instagram</span>
+        </div>
+      </div>
     </div>
-    <div>
-        <img src="Image/YenBm.jpg" alt="x">
-    </div>
-    <hr>
-    <br>
+  </div>
+  </div>
+  <img src="Image/YenBmX.png" alt="pfp" class="ftimg">
+  </div>
+  <hr>
+  </div>
+
+  <br>
     <div class="bordercol">
-        <div  class="P">
+        <div class="P">
             <p>
                 <h4>Personal Info</h4>
                 <p>Known For: Visual Effects </p>
@@ -194,102 +544,191 @@ ul {
     <br>
     <br>
     <hr>
-    <h1>| Works |</h1>
-    <h4>Known For:</h4> 
-    <div class="container">
-                <img src="Image/One Piece.png" alt="OP" class="resize">
-                <img src="Image/AOT.png" alt="AOT" class="resize">
-                <img src="Image/OPM.png" alt="OPM" class="resize">
-                <img src="Image/Clover.png" alt="clover" class="resize">
-                <img src="Image/SAO.png" alt="SAO" class="resize">
-                <img src="Image/Castlevania.png" alt="castle" class="resize">
-                <img src="Image/Mob.png" alt="Mob" class="resize">
-                <img src="Image/fate.jpg" alt="fate" class="resize">
-                <img src="Image/CM.png" alt="CM" class="resize">
-    </div>
-    <hr>
-    <br>
-    <h1>| Visual Effects |</h1>
+
+  <!-- works -->
+
+  <br>
+<h1 class="center">| Works |</h1>
+<h4 class="center">Known For:</h4>
+<div class="container1">
+        <img src="Image/One Piece.png" alt="OP" class="resize">
+        <img src="Image/AOT.png" alt="AOT" class="resize">
+        <img src="Image/OPM.png" alt="OPM" class="resize">
+        <img src="Image/Clover.png" alt="clover" class="resize">
+        <img src="Image/SAO.png" alt="SAO" class="resize">
+        <img src="Image/Castlevania.png" alt="castle" class="resize">
+        <img src="Image/Mob.png" alt="Mob" class="resize">
+        <img src="Image/fate.jpg" alt="fate" class="resize">
+        <img src="Image/CM.png" alt="CM" class="resize">
+</div>
+<hr>
+<br>
+<h1>| Visual Effects |</h1>
+<br>
+<div class="contentBruv">
     <div class="bullets">
+            <br>
             <li>2023: Frieren: Beyond Journey's End (1 episode) Key Animation</li>
             <li>2023: Ranking of Kings: The Treasure Chest of Courage (1 episode) Key Animation</li>
+                <br>
                 <hr>
+                <br>
             <li>2022: Chainsaw Man (4 episodes) Key Animation, (12 episodes) Opening/Ending Animation</li>
             <li>2022: One Piece Film Red Key Animation</li>
             <li>2022: Pokémon: Hisuian Snow (1 episode) Key Animation</li>
             <li>2022: The Orbital Children (1 episode) Key Animation</li>
+                <br>
                 <hr>
+                <br>
             <li>2021: takt op.Destiny (2 episodes) Key Animation</li>
             <li>2021: The Witcher: Nightmare of the Wolf Key Animation</li>
             <li>2021: Fate/Grand Order Final Singularity – Grand Temple of Time: Solomon Key Animation</li>
             <li>2021: Fate/Grand Order the Movie: Divine Realm Of The Round Table: Camelot Paladin; Agateram Animation Key Animation</li>
+                <br>
                 <hr>
+                <br>
             <li>2020: The Daily Life of the Immortal King (15 episodes) Opening/Ending Animation</li>
+                <br>
                 <hr>
+                <br>
             <li>2019: Fate/Grand Order Absolute Demonic Front: Babylonia (1 episode) Key Animation</li>
             <li>2019: Azur Lane (2 episodes) Key Animation</li>
             <li>2019: Vinland Saga (1 episode) Key Animation</li>
             <li>2019: CAROLE & TUESDAY (1 episode) Key Animation</li>
+                <br>
                 <hr>
+                <br>
             <li>2018: Hero Mask (1 episode) Key Animation</li>
-            <hr>
+                <br>
+                <hr>
+                <br>
             <li>2017: Black Clover (1 episode) Key Animation</li>
             <li>2017: Castlevania (1 episode) Animation</li>
+                <br>
                 <hr>
+                <br>
             <li>2016: Mob Psycho 100 (1 episodes) Key Animation</li>
             <li>2016: Hitori no Shita: The Outcast (1 episode) Key Animation</li>
             <li>2016: Bungo Stray Dogs (1 episode) Key Animation</li>
+                <br>
                 <hr>
+                <br>
             <li>2015: One-Punch Man (3 episodes) Key Animation</li>
-            <hr>
+                <br>
+                <hr>
+                <br>
             <li>2013: Attack on Titan (1 episode) Key Animation</li>
+                <br>
                 <hr>
+                <br>
             <li>2012: Sword Art Online (1 episode) Key Animation</li>
+                <br>
                 <hr>
+                <br>
             <li>1999: One Piece (9 episodes) Key Animation</li>
-    </div> <br> <br>
-    <hr>
+            <br>
+    </div>
+</div> <br> <br>
+<hr>
+<br>
 <h1>| Directing |</h1>
+<br>
+<div class="contentBruv">
     <div class="bullets">
-        <ul>
-            <li>2021: The Witcher: Nightmare of the Wolf Layout</li> 
-        </ul>
-    </div> <br> <br>
+        <br>
+        <li>2021: The Witcher: Nightmare of the Wolf Layout</li>
+            <br>
+    </div>
+</div> <br> <br>
+<br>
+<div class="gradient-background">
     <hr>
-<h1>| Genga & Animations|</h1>
-<div>
-    <img src="Image/yen1.gif" alt="1" class="edit">
-</div>
-<div>
-    <img src="Image/yen2.gif" alt="2" class="edit">
-</div>
-<div>
-    <img src="Image/yen3.webp" alt="3" class="edit">
-</div>
-<div>
-    <img src="Image/yen4.gif" alt="4" class="edit">
-</div>
-<div>
-    <img src="Image/yen5.gif" alt="5" class="edit">
-</div>
-<div>
-    <img src="Image/yen6.gif" alt="6" class="edit">
-</div>
-<div>
-    <img src="Image/yen7.gif" alt="7" class="edit">
-</div>
-<div>
-    <img src="Image/yen8.gif" alt="8" class="edit">
-</div>
-<div>
-    <img src="Image/yen9.webp" alt="9" class="edit">
+    <br>
+    <h1>| Genga & Animations|</h1>
+    <br>
+        <div class="display">
+            <img src="Image/yen1.gif" alt="1" class="edit">
+        </div>
+        <div class="display">
+            <img src="Image/yen2.gif" alt="2" class="edit">
+        </div>
+        <div class="display">
+            <img src="Image/yen3.webp" alt="3" class="edit">
+        </div>
+        <div class="display">
+            <img src="Image/yen4.gif" alt="4" class="edit">
+        </div>
+        <div class="display">
+            <img src="Image/yen5.gif" alt="5" class="edit">
+        </div>
+        <div class="display">
+            <img src="Image/yen6.gif" alt="6" class="edit">
+        </div>
+        <div class="display">
+            <img src="Image/yen7.gif" alt="7" class="edit">
+        </div>
+        <div class="display">
+            <img src="Image/yen8.gif" alt="8" class="edit">
+        </div>
+        <div class="display">
+            <img src="Image/yen9.webp" alt="9" class="edit">
+        </div>
+        <hr>
 </div>
 <br>
-<hr>
-<div>
-    <h5>
-        © 2024 <a href="index.html">Hall of Animators</a> . All rights reserved. <a href="Socials.html">Contact Us.</a>
-      </h5>
-</div>
+
+  <!-- socials section -->
+
+  <div class="footer">
+    <footer id="contacts">
+      <div class="container">
+        <div class="profile">
+          <h2>Personal Info</h2>
+          <p>
+            I'm Seth Hector Vasquez, a BSIT student driven about growth in the tech field. Beyond academics, I enjoy reading manga, playing games, and etc. I'm especially interested in web design and animation like blender or art continuously building my skills to create impactful, user-friendly digital experiences.
+          </p>
+          <ul class="sci">
+            <li><a href="Socials.html"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="https://www.facebook.com/seth.vasquez.98/"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://x.com/Tundesify117001"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com/tunde_seth/?hl=en"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="links">
+          <h2>Website</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#animator-section">Animator</a></li>
+            <li><a href="contact.html">Contacts</a></li>
+          </ul>
+        </div>
+        <div class="contacts">
+          <h2>Contacts</h2>
+          <ul class="number">
+            <li>
+              <span><i class="fa-solid fa-phone"></i></span>
+              <p>+63 9876 543 2101</p>
+            </li>
+          </ul>
+        </div>
+        <div class="notice">
+          <img src="Image/Logo.jpg">
+          <p>
+            Note: This website is for educational purposes only and is intended to provide information, resources, and
+            activities to support learning and personal growth. All content is designed to enhance knowledge and skills
+            in a safe, respectful environment.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="copyright">
+    <p>
+    © 2024 <a href="index.html" class="link">Hall Of Animators.</a> All rights reserved.
+    <a href="Socials.html"class="link">Contact us</a>
+    </p>
+  </div>
 </body>
+
 </html>
