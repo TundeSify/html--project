@@ -1,228 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- check this website out "https://tundesify.github.io/html--project/" -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        background: linear-gradient(45deg, #0d1b2a, #1b263b, #415a77, #778da9);
-        background-size: 400% 400%;
-        margin: 0;
-        text-align: center;
-        font-family: "Agdasima", sans-serif;
-        color: white;
-        padding: 0;
-        overflow-x: hidden;
-        align-items: center;
-      }
-      
-      body {
-      background: linear-gradient(133deg, #3d348b, #03071e, #415a77, #0077b6);
-      background-size: 240% 240%;
-      animation: gradient-animation 40s ease infinite;
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display&display=swap"
+    rel="stylesheet">
+  <style>
+    .titlebar {
+      width: 100%;
+      height: 100%;
+      background-color: rgb(8, 8, 8);
+      padding: 10px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0%;
+      left: 0%;
+      right: 0%;
+      z-index: 99;
+      border-bottom: solid black 3px;
+    }
+    .logo {
+      align-items: center;
+      border-radius: 10px;
+      width: 250px;
+      height: 55px;
+    }
+    .nav-button {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.5rem;
+      background-color: black;
+      border-radius: 0.25rem;
+      border: 0.1rem solid black;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+      transition: 0.5s;
     }
 
-    @keyframes gradient-animation {
-      0% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
+    .nav-button img {
+      width: 20px;
     }
-      .position {
-        border: solid white;
-        padding: 10px;
-        position: sticky;
-        top: 0;
-        width: 98.3%;
-        z-index: 1;
-        background-color: black;
-      }
-      h1 {
-        margin-top: 20px;
-        font-size: 3rem;
-        letter-spacing: 5px;
-      }
-      .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-        padding: 50px 0;
-      }
-      .box {
-        width: 80%;
-        max-width: 600px;
-        background-color: black;
-        border-radius: 10px;
-        padding: 20px;
-        opacity: 0;
-        transform: translateY(50px);
-        animation: fadeInUp 1s ease-out forwards;
-        margin: auto;
-      }
-      /* Apply a staggered animation delay for each box */
-      .box:nth-child(1) {
-        animation-delay: 0.3s;
-      }
-      .box:nth-child(2) {
-        animation-delay: 0.6s;
-      }
-      .box:nth-child(3) {
-        animation-delay: 0.9s;
-      }
-      .box:nth-child(4) {
-        animation-delay: 1.2s;
-      }
 
-      @keyframes fadeInUp {
-        0% {
-          opacity: 0;
-          transform: translateY(50px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+    .nav-button span {
+      font-size: 1.1rem;
+    }
 
-      .box h2 {
-        margin: 0;
-        font-size: 2rem;
-      }
+    .nav-button:hover {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.5rem;
+      background-color: cadetblue;
+      border-radius: 0.25rem;
+      border: 0.1rem solid cadetblue;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+    }
 
-      .box p {
-        margin: 10px 0 0;
-        font-size: 1.2rem;
-        line-height: 1.6;
-      }
+    /* Dropdown Menu */
 
-      html {
-        scroll-behavior: smooth;
-      }
-      button {
-        font-family: "Agdasima", sans-serif;
-        background-color: black;
-        color: white;
-        padding: 5px;
-        border: solid white 1px;
-        border-radius: 10px;
-        transition: all 0.3s ease-in-out;
-      }
+    .menu {
+      display: none;
+      position: absolute;
+      top: 105%;
+      left: 0;
+      right: 0;
+      background-color: black;
+      padding: 10px 0;
+      text-align: center;
+      min-width: 100%;
+      transition: 0.5s;
+    }
 
-      .button2 {
-        padding: 10px 50px;
-      }
+    .menu a {
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+      transition: 0.5s;
+    }
+    .menu a:hover {
+      background-color: darkgray;
+    }
 
-      /* Arrow animation on button hover */
-      .button2:hover::after {
-        content: " >>";
-        transition: all ease-in-out 0.5s;
-        color: rgb(178, 178, 255);
-      }
+    /* Show dropdown menu when hovering over nav-button */
+    .nav-button:hover .menu {
+      display: block;
+    }
 
-      .button2:hover {
-        color: rgb(178, 178, 255);
-      }
-      @keyframes slideInLeft {
-      from {
-        transform: translateX(-300px);
-        }
+/* Contacts-section */
 
-      to {
-        transform: translateX(0);
-        }
-      }
-      .heading-1 {
-        animation: slideInLeft 3s ease-in;
-      }
-      @keyframes slideInRight {
-      from {
-        transform: translateX(500px);
-        }
+    footer {
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding: 50px 100px;
+      background: #000000;
+    }
 
-      to {
-        transform: translateX(0px);
-        }
-      }
-      .heading-2 {
-        animation: slideInRight 3s ease-in;
-      }
-      a {
-        color: white;
-        text-decoration: none;
-      }
-      .bordercol {
-        border: solid white;
-        background-color: black;
-        padding: 10px 100px;
-      }
-    </style>
+    footer .container {
+      width: 100%;
+      display: inline-flex;
+      gap: 65px;
+    }
+
+    footer .container .profile h2 {
+      position: relative;
+      color: whitesmoke;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    footer .container .profile p {
+      color: whitesmoke;
+      text-align: justify;
+    }
+
+    footer .container .sci {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 50px);
+    }
+
+    footer .container .sci li {
+      list-style: none;
+    }
+
+    footer .container .sci li a {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      background: #fff;
+      display: grid;
+      align-content: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: 0.5s;
+    }
+
+    footer .container .sci li a i {
+      color: #03071e;
+      font-size: 20px;
+    }
+
+
+    footer .container .sci li a:hover {
+      background: #e13062;
+    }
+
+    footer .container .links {
+      position: relative;
+    }
+
+    footer .container .links h2 {
+      color: whitesmoke;
+      margin-bottom: 12px;
+    }
+
+    footer .container .links ul li {
+      list-style: none;
+    }
+
+    footer .container .links ul li a {
+      color: whitesmoke;
+      text-decoration: none;
+      margin-bottom: 15px;
+      display: inline-block;
+      transition: 0.5s;
+    }
+
+    footer .container .links ul li a:hover {
+      color: #e13062;
+    }
+
+    footer .container .contacts h2 {
+      color: whitesmoke;
+      margin-bottom: 20px;
+    }
+
+    footer .container .contacts .number {
+      position: relative;
+    }
+
+    footer .container .contacts .number li {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      margin-bottom: 16px;
+      list-style: none;
+    }
+
+    footer .container .contacts .number li span {
+      color: whitesmoke;
+      font-size: 20px;
+    }
+
+    footer .container .contacts .number li p {
+      color: whitesmoke;
+    }
+
+    footer .container .notice {
+      position: relative;
+    }
+
+    footer .container .notice img {
+      width: 35px;
+      margin-top: 0px;
+    }
+
+    footer .container .notice p {
+      color: whitesmoke;
+      text-align: justify;
+      margin-left: 1px;
+      line-height: 25px;
+    }
+
+    .copyright {
+      width: 100%;
+      background: #000000;
+      padding: 20px 100px 30px;
+      text-align: center;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .copyright a {
+      color: #2117da;
+      font-size: medium;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.5s;
+    }
+
+    .copyright a:hover {
+      color: #2117da;
+    }
+
+    /* Font */
+
+    .kanit-medium-italic {
+      text-align: center;
+      font-family: "Kanit", sans-serif;
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    .kanit-medium {
+      font-size: large;
+      text-align: justify;
+      font-family: "Kanit", sans-serif;
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    /* Hero Section */
+
+    .hero {
+      width: 100%;
+      height: 650px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fade {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 650px);
+    }
+
+    #video1 {
+      position: absolute;
+      filter: brightness(120%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    #img2{
+      position: absolute;
+      width: 500px;
+      height: 200px;
+      top: 20%;
+      left: 34%;
+      z-index: 1;
+    }
+
+    .hero li{
+      list-style: none;
+      position: relative; 
+      display: inline-block; 
+      margin-right: 10px; 
+      font-size: larger;
+      font-weight: 600;
+      font-family: 'Trebuchet MS';
+      color: white;
+      margin-top: 20%;
+      left: 26%;
+      z-index: 1;
+    }
+
+    .hero p{
+      z-index: 1;
+      position: absolute;
+      font-size: large;
+      font-weight: 500;
+      font-family: 'Trebuchet MS';
+      color: white;
+      width: 550px;
+      text-align: center;
+      line-height: 1.8rem;
+      margin-top: 20px;
+      left: 32%;
+    }
+
+    .hero button{
+      position: absolute;
+      color: white;
+      background: none;
+      border: #fff solid 3px;
+      border-radius: 0.5rem;
+      font-size: larger;
+      font-weight: 600;
+      font-family: 'Trebuchet MS';
+      padding: 5px;
+      margin-top: 10%;
+      left: 46%;
+      z-index: 1;
+      width: 130px;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+
+    .hero button:hover{
+      position: absolute;
+      color: #000000;
+      background: white;
+      border: #fff solid 3px;
+      border-radius: 0.5rem;
+      font-size: larger;
+      font-weight: 600;
+      font-family: 'Trebuchet MS';
+      padding: 5px;
+      margin-top: 10%;
+      left: 46%;
+      z-index: 1;
+      width: 130px;
+      cursor: pointer;
+    }
+
+    /* Info */
+
+    .bluefade {
+      width: 100%;
+      height: 350px;
+      position: absolute;
+      z-index: 1;
+      background: linear-gradient(0deg, rgb(3, 7, 30), rgba(3, 7, 30, 0.681), transparent 50%);
+    }
+
+    .container {
+      width: 100%;
+      height: 350px;
+      position: relative;
+    }
+
+    .movie {
+      width: 100%;
+      height: 350px;
+      background-color: black;
+      background-position: right;
+      position: relative;
+    }
+
+    .movie p {
+      position: absolute;
+      text-align: left;
+      color: white;
+      font-size: 30px;
+      width: 650px;
+      margin-top: 129px;
+      left: 10%;
+      z-index: 1;
+    }
+
+    .movie img {
+      width: 450px;
+      height: 300px;
+      position: absolute;
+      right: 10%; 
+      top: 50%; 
+      transform: translateY(-50%);
+      border-radius: 10px;
+      filter: brightness(70%);
+      z-index: 1;
+      transition: 0.5s;
+    }
+
+    .movie img:hover {
+      width: 455px;
+      position: absolute;
+      right: 10%; 
+      top: 50%; 
+      transform: translateY(-50%);
+      border-radius: 10px;
+      filter: brightness(70%);
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .blackfade {
+      position: absolute;
+      width: 100%;
+      height: 750px;
+      z-index: 1;
+      background: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.049), transparent 60%);
+    }
+  </style>
 </head>
+
 <body>
-    <hr>
-    <div class="position">    
-        <h1>| Hall of Animators |</h1>
-      <hr>
-      <div class="Links">
-        <a href="index.html">Home</a> | <a href="Socials.html">Socials</a>
+
+  <div class="titlebar">
+    <img src="Image/HOA.png" alt="logo" class="logo">
+    <div class="nav-button">
+      <img src="Image/menu.png" alt="Menu icon">
+      <span>Menu</span>
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="Animation.html">About</a>
+        <a href="index.html#animator-section">Animator</a>
+        <a href="Socials.html">Contacts</a>
       </div>
     </div>
-    <hr>
-    <div class="bordercol">
-        <div class="heading-2">
-            <h1>| Animation |</h1>
-        </div>
+  </div>
+
+  <!-- Hero Section -->
+
+  <div class="hero">
+    <div class="fade"></div>
+      <video id="video1" autoplay loop muted>
+        <source src="Image/mahoraga.mp4" type="video/mp4">
+      </video>
+      <img src="Image/Animation.png" alt="title" id="img2" draggable="false">
+       <ul>
+        <li>Animation started in 1907</li>
+        <li>By: French artist Émile Cohl on his filmmaking career</li>
+       </ul>
+         <p>
+            And because of it, it has now spread out througout the whole world that animation can create entertainment for the world and create your handwritten stories brought to life.
+         </p>
+        <button onclick="document.location='WIA.html'">What is Animation?</button>
+  </div>
+
+  <!-- Info -->
+   <hr>
+  <div class="bluefade"></div>
+  <div class="container">
+    <div class="movie">
+      <p class="kanit-medium">
+        Known for their captivating worlds and emotional storytelling, Studio Ghibli has set a high standard for anime movies. 
+      </p>
+        <img src="Image/StudioGhibili.jpg" alt="yur">
     </div>
-    <hr>
-    <div class="heading-1">
-        <h2><button onclick="document.location='WIA.html'" class="button2">What is Animation?</button></h2>
+  </div>
+  <hr>
+  <div class="bluefade"></div>
+  <div class="container">
+    <div class="movie">
+        <img src="Image/shonen.png" alt="yur">
+        <p class="kanit-medium">
+            Dragon Ball, Naruto, One Piece and etc., defined generations of anime lovers with their action-packed adventures. 
+          </p>
     </div>
-    <hr>
+  </div>
+  <hr>
+  <div class="bluefade"></div>
+  <div class="container">
+    <div class="movie">
+        <img src="Image/Modern.png" alt="yur">
+        <p class="kanit-medium">
+            Anime like Attack on Titan and Demon Slayer push the boundaries of animation quality and narrative depth. 
+          </p>
+    </div>
+  </div>
+  <hr>
+  <div class="bluefade"></div>
+  <div class="container">
+    <div class="movie">
+        <img src="Image/slifeoflife.png" alt="yur">
+        <p class="kanit-medium">
+            With a focus on everyday life, these shows offer heartwarming stories that connect deeply with their audiences. 
+          </p>
+    </div>
+  </div>
+  <hr>
+ 
+<!-- Socials section -->
+
+<div class="footer">
+  <footer id="contacts">
     <div class="container">
-        <div class="heading-1">
-            <div class="box">
-                <h2>Studio Ghibli</h2>
-                <p>Known for their captivating worlds and emotional storytelling, Studio Ghibli has set a high standard for anime movies.</p>
-            </div>
-        </div>
-
-        <div class="heading-2">
-            <div class="box">
-                <h2>Shonen Classics</h2>
-                <p>Dragon Ball, Naruto, and One Piece defined generations of anime lovers with their action-packed adventures.</p>
-            </div>
-        </div>
-
-        <div class="heading-1">
-            <div class="box">
-                <h2>Modern Masterpieces</h2>
-                <p>Anime like Attack on Titan and Demon Slayer push the boundaries of animation quality and narrative depth.</p>
-            </div>
-        </div>
-
-        <div class="heading-2">
-            <div class="box">
-                <h2>Slice of Life</h2>
-                <p>With a focus on everyday life, these shows offer heartwarming stories that connect deeply with their audiences.</p>
-            </div>
-        </div>
+      <div class="profile">
+        <h2>Personal Info</h2>
+          <p>
+            I'm Seth Hector Vasquez, a BSIT student driven about growth in the tech field. Beyond academics, I enjoy reading manga, playing games, and etc. I'm especially interested in web design and animation like blender or art continuously building my skills to create impactful, user-friendly digital experiences. 
+          </p>
+            <ul class="sci">
+                <li><a href="Socials.html"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="https://www.facebook.com/seth.vasquez.98/"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://x.com/Tundesify117001"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/tunde_seth/?hl=en"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+      </div>
+      <div class="links">
+        <h2>Website</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Animation.html">About</a></li>
+            <li><a href="index.html#animator-section">Animator</a></li>
+            <li><a href="Socials.html">Contacts</a></li>
+          </ul>
+      </div>
+      <div class="contacts">
+        <h2>Contacts</h2>
+        <ul class="number">
+          <li>
+            <span><i class="fa-solid fa-phone"></i></span><p>+63 9876 543 2101</p>
+          </li>
+        </ul>
+      </div>
+      <div class="notice">
+        <img src="Image/Logo.jpg">
+          <p>
+            Note: This website is for educational purposes only and is intended to provide information, resources, and activities to support learning and personal growth. All content is designed to enhance knowledge and skills in a safe, respectful environment.
+          </p>
+      </div>
     </div>
-    <br>
-    <hr>
-    <div>
-      <h5>© 2024 <a href="index.html">Hall of Animators.  |</a> All rights reserved. <a href="Socials.html">|  Contact Us.</a></h5>
-    </div>
+  </footer>
+</div>
+<div class="copyright">
+  <p>
+    © 2024 <a href="index.html" class="link">Hall Of Animators.</a> All rights reserved.
+    <a href="Socials.html"class="link">Contact us</a>
+  </p>
+</div>
 </body>
 </html>
