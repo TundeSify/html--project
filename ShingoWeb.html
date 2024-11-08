@@ -481,7 +481,7 @@ body {
             padding: 10px;
             display: inline-block;
         }
-    button {
+        .next {
       position: absolute;
       color: white;
       background: none;
@@ -490,7 +490,7 @@ body {
       font-size: larger;
       font-weight: 600;
       font-family: 'Trebuchet MS';
-      left: 47%;
+      left: 51%;
       padding: 5px;
       z-index: 1;
       width: 100px;
@@ -498,7 +498,7 @@ body {
       transition: 0.5s;
     }
 
-    button:hover {
+    .next:hover {
       position: absolute;
       color: #000000;
       background: white;
@@ -507,7 +507,40 @@ body {
       font-size: larger;
       font-weight: 600;
       font-family: 'Trebuchet MS';
-      left: 47%;
+      left: 51%;
+      padding: 5px;
+      z-index: 1;
+      width: 100px;
+      cursor: pointer;
+    }
+
+    .back {
+      position: absolute;
+      color: white;
+      background: none;
+      border: #fff solid 3px;
+      border-radius: 0.5rem;
+      font-size: larger;
+      font-weight: 600;
+      font-family: 'Trebuchet MS';
+      left: 42%;
+      padding: 5px;
+      z-index: 1;
+      width: 100px;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+
+    .back:hover {
+      position: absolute;
+      color: #000000;
+      background: white;
+      border: #fff solid 3px;
+      border-radius: 0.5rem;
+      font-size: larger;
+      font-weight: 600;
+      font-family: 'Trebuchet MS';
+      left: 42%;
       padding: 5px;
       z-index: 1;
       width: 100px;
@@ -763,7 +796,7 @@ body {
         <hr>
 </div>
 <br>
-<button onclick="document.location='WatanabeWeb.html'">→</button>
+<button onclick="document.location='TakashiWeb.html'" class="back">←</button><button onclick="document.location='WatanabeWeb.html'" class="next">→</button>
 <br>
 <br>
 <br>
