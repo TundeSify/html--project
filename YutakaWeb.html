@@ -547,12 +547,72 @@ body {
       width: 100px;
       cursor: pointer;
     }
+
+        /* search */
+#myInput {
+  background-color: black;
+  color: white;
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 30%; /* Reduced width */
+  font-size: 16px;
+  padding: 8px 20px; /* Reduced padding */
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  transition: width 0.3s ease; /* Smooth transition when interacting */
+}
+
+#myInput:focus {
+  width: 50%; /* Increase width when focused */
+}
   </style>
+
+<script>
+  // Array of names and corresponding URLs
+  const names = [
+      { name: "Vincent Chansard", url: "VincentWeb.html" },
+      { name: "Chris_Bm", url: "ChrisWeb.html" },
+      { name: "Yutaka Nakamura", url: "YutakaWeb.html" },
+      { name: "Weiling Zhang", url: "WeilinWeb.html" },
+      { name: "Masami Mori", url: "MasamiWeb.html" },
+      { name: "Akihiro Ota", url: "AkihiroWeb.html" },
+      { name: "Vercreek", url: "VercreekWeb.html" },
+      { name: "Shuu Sugita", url: "ShuuWeb.html" },
+      { name: "Takashi Kojima", url: "TakashiWeb.html" },
+      { name: "Shingo Yamashita", url: "ShingoWeb.html" },
+      { name: "Keiichiro Watanabe", url: "WatanabeWeb.html" }
+  ];
+  
+  function myFunction(event) {
+      var input = document.getElementById("myInput");
+      var filter = input.value.toUpperCase();
+      var matched = false;
+  
+      // Loop through names array and check if input matches
+      for (let i = 0; i < names.length; i++) {
+          if (names[i].name.toUpperCase().indexOf(filter) > -1) {
+              matched = true;
+              // If Enter key is pressed, redirect to the corresponding page
+              if (event.key === "Enter") {
+                  window.location.href = names[i].url;
+              }
+          }
+      }
+  
+      // If no match and Enter is pressed, clear the input field
+      if (!matched && event.key === "Enter") {
+          alert("No matching name found!");
+          input.value = ""; // Clear input field if no match
+      }
+  }
+      </script>
+
 </head>
 
 <body>
   <div class="titlebar">
     <img src="Image/HOA.png" alt="logo" class="logo">
+    <input type="text" id="myInput" onkeyup="myFunction(event)" placeholder="Search for names..." title="Type in a name">
     <div class="nav-button">
       <img src="Image/menu.png" alt="Menu icon">
       <span>Menu</span>
